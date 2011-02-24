@@ -1,0 +1,3 @@
+/* SC.StaticLayout Support */
+.sc-static-layout, .sc-view.sc-static-layout {
+  position: relative; }

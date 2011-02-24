@@ -1,0 +1,38 @@
+/* line 3, ././tmp/chance//Users/kcarriedo/Desktop/thecodeboutique/apps/thecodeboutique/resources/style.css.scss */
+.title-label {
+  color: white;
+  font: 50px 'Zapfino';
+  font-size: 32px !important;
+  line-height: 120px !important;
+  margin-bottom: 0 !important;
+}
+
+/* line 11, ././tmp/chance//Users/kcarriedo/Desktop/thecodeboutique/apps/thecodeboutique/resources/style.css.scss */
+.icon-one {
+  border-radius: 15px !important;
+}
+
+/* line 15, ././tmp/chance//Users/kcarriedo/Desktop/thecodeboutique/apps/thecodeboutique/resources/style.css.scss */
+.frame {
+  opacity: 0;
+}
+
+/* line 19, ././tmp/chance//Users/kcarriedo/Desktop/thecodeboutique/apps/thecodeboutique/resources/style.css.scss */
+.landing-labels {
+  color: white;
+  font: 13px 'Zapfino';
+  margin-left: -29px !important;
+  text-align: 'center' !important;
+  line-height: 49px !important;
+  font-size: 13px !important;
+}
+
+/* line 29, ././tmp/chance//Users/kcarriedo/Desktop/thecodeboutique/apps/thecodeboutique/resources/style.css.scss */
+.profile-frame {
+  opacity: 0;
+}
+
+/* line 33, ././tmp/chance//Users/kcarriedo/Desktop/thecodeboutique/apps/thecodeboutique/resources/style.css.scss */
+.bottom-frame {
+  opacity: 0;
+}
