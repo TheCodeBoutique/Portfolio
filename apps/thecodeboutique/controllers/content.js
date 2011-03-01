@@ -12,7 +12,13 @@
 */
 Thecodeboutique.contentController = SC.ObjectController.create({
 	
-	nowShowing:'Lorem ipsum dolor sit amet, aliquam turpis. Morbi laoreet. Libero lacinia lacinia in lectus feugiat, feugiat tortor nostra, molestie sapien, velit vestibulum erat sit, platea blandit tellus tortor volutpat viverra vestibulum. A ultricies aliquam vel blandit volutpat elementum, ipsum eget felis sapiente. Etiam convallis iaculis ligula sit justo egestas, erat lacus amet risus. Ut vestibulum arcu, nullam sodales mi odio, neque sodales. Sed leo dui, pede a leo. A ultricies leo lacinia mollis, massa nunc egestas nec pellentesque vitae, in fringilla lorem proin, magna dui tortor, et risus nec. Et sed, mattis dolor massa aut at aliquet posuere.',
+	one:'The Code Boutique',
+	
+	two:'specializes in engineering cloud applications for desktop, mobile, and tablet devices running the latest browser',
+	
+	three:'technology.  We use cutting edge web frameworks such as sproutcore, node.js, and websockets to synchronize web services to native apple applications through the cloud with minimal server requests, one database, and blazing fast data parsing.',
+	
+	bottom:'Current Projects in development:'
 
 
 });

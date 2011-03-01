@@ -1,0 +1,175 @@
+/* ==========================================================================
+*  Project:   Endeavourlight Theme Styles
+*  Copyright: ©2011 My Company, Inc.
+*  ==========================================================================
+*/
+
+.base-view {
+  background-image: sc_static('/images/base.png');
+}
+
+.globe-image{
+	background-image: sc_static('/images/globe.png');
+}
+
+.tcb-text{
+	color:white;
+	font:50px 'Zapfino';
+	font-size: 44px !important;
+	line-height: 160px !important;
+	margin-bottom: 0 !important;
+	z-index: 2;
+	text-shadow: 1px 3px 1px #292929;  
+	letter-spacing: 2px;  
+}
+
+.sliding-navigation{
+	background-image: sc_static('/images/slidingNavigation.png');
+	outline-color: gray;
+	outline-style: solid;
+	outline-width: 1px;
+}
+
+.home-middleview{
+	background-image: sc_static('/images/homeMiddleView.png');
+	outline-color: gray;
+	outline-style: solid;
+	outline-width: 1px;
+}
+
+.home-topview{
+	opacity:0;
+}
+
+.home-middle-view
+{
+	opacity:0;
+}
+
+.home-content-text-one{
+	color:white;
+	font:50px 'Zapfino';
+	font-size: 18px !important;
+	line-height: 61px !important;
+}
+
+.home-content-text-two{
+	color:white;
+	font:50px 'JosefinSansStd-Light';
+	font-size: 18px !important;
+	line-height: 22px !important;
+} 
+
+.home-content-text-three{
+	color:white;
+	font:50px 'JosefinSansStd-Light';
+	font-size: 18px !important;
+	line-height: 22px !important;
+}
+
+.home-bottomview-text{
+	color:white;
+	font:50px 'daniel';
+	font-size: 20px !important;
+	line-height: 42px !important;
+}
+
+.profile-leftView{
+	background-image: sc_static('/images/darkbase.png');
+}
+
+.profile-top-base-view{
+	background-image: sc_static('/images/base.png');
+	z-index: 3;
+}
+
+.profile-appView{
+	z-index: 4;
+}
+
+.profile-listview-top{
+	background-image: sc_static('/images/listViewTop1.png');
+}
+
+.profile-listview-middle{
+	background-image: sc_static('/images/listViewMiddle.png');
+}
+
+.profile-listview-bottom{
+	background-image: sc_static('/images/listViewBottom.png');
+}
+
+.app-content-text{
+	font-weight: normal;
+	color:black;
+	font:18px 'JosefinSansStd-Light';
+	font-size: 18px !important;
+	line-height: 26px !important;
+}
+
+.sc-list-item-view.sel {
+  background-image: sc_static('/images/listViewSelection.png');
+  color: white;
+	border-bottom-color: gray;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	max-width: 225px;
+}
+
+.sc-list-item-view.sc-regular-size {
+	font-weight: normal;
+  font-size: 18px;
+	border-bottom-color: gray;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	max-width: 225px;
+	font:18px 'JosefinSansStd-Light';
+}
+
+.sc-list-item-view.has-icon label{
+  left: 50px;
+	margin-top: -5px;
+}
+
+.sc-list-item-view img.icon {
+  max-width: 40px;
+  max-height: 34px;
+  top: 36%;
+}
+
+.toolbar{
+	background-image: sc_static('/images/toolbar.png');
+	z-index: 2;
+	-webkit-box-shadow: 0px 0px 5px rgba(0,0,0,1.0);
+	-moz-box-shadow: 0px -1px 2px rgba(0,0,0,0.3);
+}
+
+/*=================*/
+
+
+.icon-one
+{
+	border-radius: 15px !important;
+}
+.sliding-navigation
+{
+	opacity:0;
+}
+.landing-labels
+{
+	color:white;
+	font:13px 'daniel';
+	letter-spacing: 2px;
+	text-align:'center' !important;
+	line-height: 49px !important;
+	font-size: 15px !important;
+
+}
+.profile-middle-view
+{
+		opacity:0;
+}
+.bottom-frame
+{
+		opacity:0;
+}

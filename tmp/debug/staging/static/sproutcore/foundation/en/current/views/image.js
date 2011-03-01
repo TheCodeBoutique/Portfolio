@@ -26,7 +26,7 @@ SC.IMAGE_TYPE_CSS_CLASS = 'CSS_CLASS';
 */
 SC.BLANK_IMAGE_DATAURL = "data:image/gif;base64,R0lGODlhAQABAJAAAP///wAAACH5BAUQAAAALAAAAAABAAEAAAICBAEAOw==";
 
-SC.BLANK_IMAGE_URL = SC.browser.msie && SC.browser.msie<8 ? '/static/sproutcore/foundation/en/current/blank.gif?1298183330' : SC.BLANK_IMAGE_DATAURL;
+SC.BLANK_IMAGE_URL = SC.browser.msie && SC.browser.msie<8 ? '/static/sproutcore/foundation/en/current/blank.gif?1298670101' : SC.BLANK_IMAGE_DATAURL;
 
 SC.BLANK_IMAGE = new Image();
 SC.BLANK_IMAGE.src = SC.BLANK_IMAGE_URL;

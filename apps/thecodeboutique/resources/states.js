@@ -1,94 +1,127 @@
 SC.mixin(Thecodeboutique, {
-  
   statechart: Ki.Statechart.create({
-
     rootState: Ki.State.design({
-
-      initialSubstate: 'Landing',
-
-      Landing: Ki.State.design({
+      initialSubstate: 'FirstView',
+      FirstView: Ki.State.design({
 
         enterState: function() {
-  				console.log('Landing');
+					// State description: sets the mainPage.mainPane, //
+					// delays the animated navigation bar, //
+					// sets the tcb text to 0, //
+					// sets the navigation buttons reversed //
+  				console.log('enterState: mainPage.mainPane w/ animated navigation');
 					Thecodeboutique.getPath('mainPage.mainPane').append();
-					//ScCommunityApp.getPath('signInPage.mainPane').append();
-					Thecodeboutique.mainPage.mainPane.frame.iconOne.animate('rotateY',180,{duration:1.0, timing:'ease-in-out'});
-					Thecodeboutique.mainPage.mainPane.frame.iconTwo.animate('rotateY',180,{duration:1.2, timing:'ease-in-out'});
-					Thecodeboutique.mainPage.mainPane.frame.iconThree.animate('rotateY',180,{duration:1.4, timing:'ease-in-out'});
-					Thecodeboutique.mainPage.mainPane.frame.iconForth.animate('rotateY',180,{duration:1.6, timing:'ease-in-out'});
-					
-					//setup fram on other view
-					Thecodeboutique.getPath('profilePage.mainPane');
-					Thecodeboutique.profilePage.mainPane.frame.animate('scale',0.001,{duration:.5, timing:'ease-in-out'});
-					
-					this.invokeLater(this.fadeBarIn,1200);
-        },
-				fadeBarIn:function()
-				{
-					console.log('go bar');
-					Thecodeboutique.mainPage.mainPane.frame.animate('opacity',0.8,{duration:1, timing:'ease-in-out'});
-					Thecodeboutique.mainPage.mainPane.frame.animate('width',0.99,{duration:1, timing:'ease-in-out'});
-					//this.gotoState('SignUp');
-					this.invokeLater(this.flipLogos,600);
-					
+					Thecodeboutique.mainPage.mainPane.slideInNav.iconOne.animate('rotateY',180,{duration:1.0, timing:'ease-in-out'});
+					Thecodeboutique.mainPage.mainPane.slideInNav.iconTwo.animate('rotateY',180,{duration:1.2, timing:'ease-in-out'});
+					Thecodeboutique.mainPage.mainPane.slideInNav.iconThree.animate('rotateY',180,{duration:1.4, timing:'ease-in-out'});
+					Thecodeboutique.mainPage.mainPane.tcbText.animate('opacity',0.0,{duration:1, timing:'ease-in-out'});
+					// sets the content in the controller apps //
+					// sets the profilePage.mainPane //
+					// starts the imageArray //
+					console.log('enterStatePreLoad: homePage.mainPane w/ slideShow array');
+					Thecodeboutique.getPath('homePage.mainPane');
+					Thecodeboutique.appsController.set('content', Thecodeboutique.apps);
+					Thecodeboutique.homePage.mainPane.middleView.slideShow.imageArray();
+					Thecodeboutique.homePage.mainPane.middleView.slideShowBack.imageArray();
+					this.invokeLater(this.slideNavigationBarIn,1200);
 				},
-				flipLogos:function()
-				{
-					Thecodeboutique.mainPage.mainPane.frame.iconOne.animate('rotateY',0,{duration:1.0, timing:'ease-in-out'});
-					Thecodeboutique.mainPage.mainPane.frame.iconTwo.animate('rotateY',0,{duration:1.2, timing:'ease-in-out'});
-					Thecodeboutique.mainPage.mainPane.frame.iconThree.animate('rotateY',0,{duration:1.4, timing:'ease-in-out'});
-					Thecodeboutique.mainPage.mainPane.frame.iconForth.animate('rotateY',0,{duration:1.6, timing:'ease-in-out'});
+				
+				slideNavigationBarIn:function() {
+					// Function description: slides the navigation bar in and delays the flipping navigation buttons //
+					console.log('    slideNavigationBarIn: slides the navigation bar in from the left');
+					Thecodeboutique.mainPage.mainPane.slideInNav.animate('opacity',0.8,{duration:1, timing:'ease-in-out'});
+					Thecodeboutique.mainPage.mainPane.slideInNav.animate('width',.9999,{duration:1, timing:'ease-in-out'});
+					this.invokeLater(this.adjustTCBTextOpacity,500);
 				},
-				goToProfilePage:function()
-				{
-					this.gotoState('Profile');
-					
+				
+				adjustTCBTextOpacity:function() {
+					// Function description: changes the opacity bar in and delays the flipping navigation buttons //
+					console.log('    adjustTCBTextOpacity: changes the opacity of the TCB text from 0 to 1');
+					Thecodeboutique.mainPage.mainPane.tcbText.animate('opacity',1.0,{duration:1, timing:'ease-in-out'});
+					this.flipNavigationButtons();
+				},
+				
+				flipNavigationButtons:function() {
+					// Function description: flips the navigation buttons 180 degrees //
+					console.log('    flipNavigationButtons: flips the navigation buttons 180 degrees');
+					Thecodeboutique.mainPage.mainPane.slideInNav.iconOne.animate('rotateY',0,{duration:1.0, timing:'ease-in-out'});
+					Thecodeboutique.mainPage.mainPane.slideInNav.iconTwo.animate('rotateY',0,{duration:1.2, timing:'ease-in-out'});
+					Thecodeboutique.mainPage.mainPane.slideInNav.iconThree.animate('rotateY',0,{duration:1.4, timing:'ease-in-out'});
+				},
+				
+				goToHomePage:function() {
+					// Function description: exits the current state and goes to the profile views enter state //
+					console.log('    goToHomePage: starts the enter state for the profile view');
+					this.gotoState('Home');
 				}
-			}), // end of the foo
-			
+				
+			}), 
 
+// end of the first view //
+// start of the home view //
 			
-	Exit: Ki.State.design({
-
-    enterState: function() {
-				console.log('EEEE');
-
-    }
-	}), // end of the foo		
-			
-			
-			
-			Profile: Ki.State.design({
+			Home: Ki.State.design({
 				
 				enterState: function() {
-						console.log('Profile');
+						console.log('enterState: homePage.mainPane');
 						Thecodeboutique.getPath('mainPage.mainPane').remove();
-						Thecodeboutique.getPath('profilePage.mainPane').append();
-						
-						Thecodeboutique.profilePage.mainPane.frame.animate('opacity',1,{duration:.5, timing:'ease-in-out'});
+						Thecodeboutique.getPath('homePage.mainPane').append();
+						Thecodeboutique.homePage.mainPane.middleView.animate('opacity',1,{duration:.5, timing:'ease-in-out'});
 						this.invokeLater(this.scaleIn,500);
-
-
+						Thecodeboutique.homePage.mainPane.middleView.animate('scale',0.001,{duration:.5, timing:'ease-in-out'});
         	},
-					scaleIn:function()
-					{
-						Thecodeboutique.profilePage.mainPane.frame.animate('scale',1.3,{duration:.5, timing:'ease-in-out'},this.invokeLater(this.backDown,500));
-						
+				
+				scaleIn:function() {
+						Thecodeboutique.homePage.mainPane.middleView.animate('scale',1.3,{duration:.5, timing:'ease-in-out'},this.invokeLater(this.backDown,500));
 					},
-					backDown:function()
+					
+				backDown:function() {
+					Thecodeboutique.homePage.mainPane.middleView.contentFrame.animate('width',650,{duration:.5, timing:'ease-in-out'});
+					Thecodeboutique.homePage.mainPane.middleView.animate('scale',1.0,{duration:.5, timing:'ease-in-out'});		
+					Thecodeboutique.homePage.mainPane.bottomView.animate('opacity',1.0,{duration:1.5, timing:'ease-in-out'});
+					Thecodeboutique.homePage.mainPane.topView.animate('opacity',1.0,{duration:1.5, timing:'ease-in-out'});						
+				},
+				
+				exit:function() {
+					this.gotoState('Exit');
+				},
+				
+				goToProfile:function() { 
+					this.gotoState('Profile');
+				}
+				
+			}), 
+			
+// end of the home view //
+// start of the portfolio view //
+
+Profile: Ki.State.design({
+				
+				enterState: function() {
+					console.log('Profile');
+					Thecodeboutique.getPath('mainPage.mainPane').remove();
+					Thecodeboutique.getPath('profilePage.mainPane').append();
+					
+					// Reset home page to its default state //
+					Thecodeboutique.getPath('homePage.mainPane')
+					Thecodeboutique.homePage.mainPane.middleView.animate('opacity',0.0,{duration:.5, timing:'ease-in-out'});
+					Thecodeboutique.homePage.mainPane.middleView.animate('scale',0.001,{duration:.5, timing:'ease-in-out'});
+					Thecodeboutique.homePage.mainPane.bottomView.animate('opacity',0.0,{duration:1.5, timing:'ease-in-out'});
+					Thecodeboutique.homePage.mainPane.topView.animate('opacity',0.0,{duration:1.5, timing:'ease-in-out'});
+					Thecodeboutique.homePage.mainPane.middleView.contentFrame.animate('width',0,{duration:.5, timing:'ease-in-out'});
+        	},
+					goBackToHome:function()
 					{
-						Thecodeboutique.profilePage.mainPane.frame.contentFrame.animate('width',450,{duration:.5, timing:'ease-in-out'});
-						Thecodeboutique.profilePage.mainPane.frame.animate('scale',1.0,{duration:.5, timing:'ease-in-out'});		
-						Thecodeboutique.profilePage.mainPane.bottomFrame.animate('opacity',1.0,{duration:1.5, timing:'ease-in-out'});
-						Thecodeboutique.profilePage.mainPane.topFrame.animate('opacity',1.0,{duration:1.5, timing:'ease-in-out'});						
+						Thecodeboutique.getPath('profilePage.mainPane').remove();
+						Thecodeboutique.getPath('homePage.mainPane').append();
+						Thecodeboutique.homePage.mainPane.middleView.animate('scale',0.001,{duration:.5, timing:'ease-in-out'});
+						this.gotoState('Home');
 					},
-					exit:function()
+					goToContact:function()
 					{
-						this.gotoState('Exit');
-					},
-					goToProfileState:function()
-					{
-						this.gotoState('Profile');
+						Thecodeboutique.getPath('profilePage.mainPane').remove();
+						Thecodeboutique.getPath('contactPage.mainPane').append();
+						this.gotoState('Contact');
 					}
 			}),
 			

@@ -4,101 +4,112 @@ Thecodeboutique.profilePage = SC.Page.design({
   // Add childViews to this pane for views to display immediately on page 
   // load.
   mainPane: SC.MainPane.design({
-    childViews: 'frame bottomFrame topFrame'.w(),
-
+		classNames:['base-view'],
+    childViews: 'topView topBar middleView bottomBar'.w(),
 		defaultResponder: Thecodeboutique.statechart,
-    
-    frame:SC.View.design({
-			classNames:['profile-frame'],
-			layout:{top:120, height:300},
-			backgroundColor:'gray',
-			childViews:'contentFrame'.w(),
-			
-			contentFrame:SC.View.design({
-				layout:{top:55, height:218,left:20,width:0},
-				//backgroundColor:'black',
-				childViews:'appContent'.w(),
-				
-				appContent:SC.LabelView.design({
-							    layout: { top:5, height:130, left:10, width:400 },
-				          escapeHTML: NO,
-							    isTextSelectable: YES,
-							    valueBinding:'Thecodeboutique.contentController.nowShowing'
-							  	}),
-						
-			}),
-			
-		}),//end of the frame
-		topFrame:SC.View.design({
-			classNames:['bottom-frame'],
-			layout:{top:0,height:160},
-			backgroundColor:'silver',
-			childViews:'logo button1 button2 button3'.w(),
-			
+		
+		topView: SC.View.design({
+			classNames:['profile-top-base-view'],
+			layout: { top: 0, left: 0, right: 0, height: 120 },  
+			childViews:'logo homeButton contributionButton contactButton'.w(),
+    	
 			logo:SC.ImageView.design({
-						//classNames:['sprout'],
-						layout: { left:20,top:20, height:100, width: 100 },
-						useImageQueue: NO, 
-						value: '/static/thecodeboutique/en/current/resources/images/globe.png?1295160194',
-			    }),
-			button1:SC.ButtonView.design({
-					        layout: { top:40, height: 44, left: 150, width: 125 },
-					        title:  "Profile",
-									controlSize: SC.JUMBO_CONTROL_SIZE,
-									//target: "ScCommunityMarketing.betaController",
-									//action: "addTask",
-									//isDefault: YES
-					      }),
-									button2:SC.ButtonView.design({
-											        layout: { top:40, height: 44, left: 288, width: 125 },
-											        title:  "Profile",
-															controlSize: SC.JUMBO_CONTROL_SIZE,
-															//target: "ScCommunityMarketing.betaController",
-															//action: "addTask",
-															//isDefault: YES
-											      }),
-															button3:SC.ButtonView.design({
-																	        layout: { top:40, height: 44, left: 426, width: 125 },
-																	        title:  "Profile",
-																					controlSize: SC.JUMBO_CONTROL_SIZE,
-																					//target: "ScCommunityMarketing.betaController",
-																					//action: "addTask",
-																					//isDefault: YES
-																	      }),
+		 		layout: { left:20,top:20, height:100, width: 100 },
+		 		useImageQueue: NO, 
+		 		value: '/static/endeavourlight/en/current/resources/images/globe.png?1298669205',
 			}),
 			
-		bottomFrame: SC.View.design({
-			classNames:['bottom-frame'],
-			layout:{bottom:0,height:200},
-			backgroundColor:'silver',
-			childViews:'image1 image2 image3 image4'.w(),
+			homeButton:SC.ButtonView.design({
+			 layout: { top:40, height: 40, left: 150, width: 106 },
+			 title:  "Home",
+			 target: "Thecodeboutique.statechart",
+			 action: "goBackToHome",
+			}),
 			
-			image1:SC.ImageView.design({
-						//classNames:['sprout'],
-						layout: { left:100, bottom:10, height:134, width: 231 },
-						useImageQueue: NO, 
-						value: '/static/thecodeboutique/en/current/resources/images/One-dark.png?1298529178',
-			    }),
-					image2:SC.ImageView.design({
-								//classNames:['sprout'],
-								layout: { left:354, bottom:10, height:134, width: 231 },
-								useImageQueue: NO, 
-								value: '/static/thecodeboutique/en/current/resources/images/One-light.png?1298529213',
-					    }),
-							image3:SC.ImageView.design({
-										//classNames:['sprout'],
-										layout: { right:100, bottom:10, height:134, width: 231 },
-										useImageQueue: NO, 
-										value: '/static/thecodeboutique/en/current/resources/images/Two-Dark.png?1298529203',
-							    }),
-									image4:SC.ImageView.design({
-												//classNames:['sprout'],
-												layout: { right:354, bottom:10, height:134, width: 231 },
-												useImageQueue: NO, 
-												value: '/static/thecodeboutique/en/current/resources/images/Two-Light.png?1298529193',
-									    }),
+			contributionButton:SC.ButtonView.design({
+				layout: { top:40, height: 40, left: 288, width: 106 },
+			 	title:  "Portfolio",
+			  target: "Thecodeboutique.statechart",
+			  action: "goToContribution",
+			 }),
+			 
+			contactButton:SC.ButtonView.design({
+				layout: { top:40, height: 40, left: 426, width: 106 },
+				title:  "Contact",
+			 	target: "Thecodeboutique.statechart",
+			 	action: "goToContact",
+			}),
 			
-		})
-  })
+		}),
+		
+		topBar: SC.ToolbarView.design({
+			classNames: ['toolbar'],
+			layout: { top: 120, left: 0, right: 0, height: 37 },
+		}),
+		
+		bottomBar: SC.ToolbarView.design({
+			classNames: ['toolbar'],
+			layout: { bottom: 0, left: 0, right: 0, height: 37 },
+		}),
+	
+		middleView: SC.SplitView.design({	
+	 		layout: { left: 0, top: 125, right: 0, bottom: 32 },
+		  layoutDirection: SC.LAYOUT_HORIZONTAL,
+		  autoresizeBehavior: SC.RESIZE_BOTTOM_RIGHT,
+		  defaultThickness: 0.8,
 
-});; if ((typeof SC !== 'undefined') && SC && SC.Module && SC.Module.scriptDidLoad) SC.Module.scriptDidLoad('thecodeboutique');
+		  topLeftView: SC.View.design({
+		  	classNames: ['profile-leftView'],
+				layout: { top: 205, bottom: 32, width: 200 },
+		    childViews: 'appView topListView middleListView bottomListView'.w(),
+		
+				topListView: SC.View.design({
+					classNames: ['profile-listview-top'],
+					layout: { height: 18, width: 239, top: 50, left: 2 },
+				}),
+				
+				middleListView: SC.View.design({
+					classNames: ['profile-listview-middle'],
+					layout: { top: 68, bottom: 45, width: 239, left: 2 },
+				}),
+				
+				bottomListView: SC.View.design({
+					classNames: ['profile-listview-bottom'],
+					layout: { height: 18, width: 242, bottom: 27, left: 1 },
+				}),
+
+				appView: SC.ScrollView.design({
+					classNames: ['profile-appView'],
+			  	hasHorizontalScroller: NO,
+			    layout: { top: 70, bottom: 0, left: 10, right: 10},
+			    
+					contentView: SC.ListView.design({
+			  		contentValueKey: "name",
+						contentBinding: "Thecodeboutique.appsController.arrangedObjects",
+						selectionBinding: "Thecodeboutique.appsController.selection",
+			     	rowHeight: 50,
+						rowSpacing: 2,
+						exampleView:Thecodeboutique.appList,
+						contentIconKey: "appImage",
+						hasContentIcon:  YES,
+          	escapeHTML: NO,	
+			  	})
+			  
+				})
+		   
+			}),//end of top left view
+
+		//This is use so that no matter what that the signup image is always going to have a 400 max size
+		 topLeftMaxThickness: 250,
+
+		        //canCollapseViews: YES,
+		        dividerView: SC.SplitDividerView.design({layout: {}}),
+
+				//This is the right side of the site we can use this to keep switching out pages
+		 bottomRightView:SC.ContainerView.design({
+				nowShowingBinding:'Thecodeboutique.appController.nowShowing',
+				layout: { centerX:0, top:0, bottom:0, centerY:0 }
+			}), 
+		 }),
+	})	
+	});; if ((typeof SC !== 'undefined') && SC && SC.Module && SC.Module.scriptDidLoad) SC.Module.scriptDidLoad('thecodeboutique');
