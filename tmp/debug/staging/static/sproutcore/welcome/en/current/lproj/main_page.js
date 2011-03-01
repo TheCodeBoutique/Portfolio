@@ -21,7 +21,7 @@ Welcome.mainPage = SC.Page.design({
         layout: { width: 271, centerX: 0, top: 0, height: 60 },
         tagName: 'img',
         render: function(context, firstTime) {
-          context.attr('src', '/static/sproutcore/foundation/en/current/images/sproutcore.png?1298183330');
+          context.attr('src', '/static/sproutcore/foundation/en/current/images/sproutcore.png?1298670101');
         }
       }),
       

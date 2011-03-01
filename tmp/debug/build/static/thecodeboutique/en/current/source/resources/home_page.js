@@ -51,7 +51,7 @@ Thecodeboutique.homePage = SC.Page.design({
 			
 			slideShow: SC.ImageView.design({
 				classNames:['slide-show'],
-				layout: { top:5, height:200, right:10, width:400 },
+				layout: { top:5, height:272, right:10, width:400 },
 				useImageQueue: NO, 
 				value: '',
 				imageArray:function() {
@@ -85,7 +85,7 @@ Thecodeboutique.homePage = SC.Page.design({
 			
 			slideShowBack: SC.ImageView.design({
 				classNames:['slide-show'],
-				layout: { top:5, height:200, right:10, width:400 },
+				layout: { top:5, height:272, right:10, width:400 },
 				useImageQueue: NO, 
 				value: '',
 				imageArray:function(){
@@ -106,8 +106,8 @@ Thecodeboutique.homePage = SC.Page.design({
 						}else{
 							t =0;
 						};
-						var active = '/static/endeavourlight/en/current/resources/images/badSprout.png?1295660841';
-						var inactive = '/static/endeavourlight/en/current/resources/images/sproutCounter.png?1296531574';
+						var active = '/static/endeavourlight/en/current/resources/images/slideshowActive.png?1299015071';
+						var inactive = '/static/endeavourlight/en/current/resources/images/slideshowNotActive.png?1299015070';
 						if(t === 0){
 							Thecodeboutique.homePage.mainPane.middleView.selectorFrame.selector6.set('value',inactive);
 							Thecodeboutique.homePage.mainPane.middleView.selectorFrame.selector1.set('value',active);
@@ -149,39 +149,39 @@ Thecodeboutique.homePage = SC.Page.design({
 			    childViews:'selector1 selector2 selector3 selector4 selector5 selector6'.w(),
 					
 					selector1:SC.ImageView.design({
-						layout: { bottom:10, right:270, height:50, width:50 },
+						layout: { bottom:5, right:240, height:15, width:15 },
 						useImageQueue: NO, 
-						value: '/static/endeavourlight/en/current/resources/images/sproutCounter.png?1296531574',
+						value: '/static/endeavourlight/en/current/resources/images/slideshowNotActive.png?1299015070',
 					}),
 					
 					selector2:SC.ImageView.design({
-						layout: { bottom:10, right:220, height:50, width:50 },
+						layout: { bottom:5, right:220, height:15, width:15 },
 						useImageQueue: NO, 
-						value: '/static/endeavourlight/en/current/resources/images/sproutCounter.png?1296531574',
+						value: '/static/endeavourlight/en/current/resources/images/slideshowNotActive.png?1299015070',
 					}),
 					
 					selector3:SC.ImageView.design({
-						layout: { bottom:10, right:170, height:50, width:50 },
+						layout: { bottom:5, right:200, height:15, width:15 },
 						useImageQueue: NO, 
-						value: '/static/endeavourlight/en/current/resources/images/sproutCounter.png?1296531574',
+						value: '/static/endeavourlight/en/current/resources/images/slideshowNotActive.png?1299015070',
 					}),
 					
 					selector4:SC.ImageView.design({
-						layout: { bottom:10, right:120, height:50, width:50 },
+						layout: { bottom:5, right:180, height:15, width:15 },
 						useImageQueue: NO, 
-						value: '/static/endeavourlight/en/current/resources/images/sproutCounter.png?1296531574',
+						value: '/static/endeavourlight/en/current/resources/images/slideshowNotActive.png?1299015070',
 					}),
 					
 					selector5:SC.ImageView.design({
-						layout: { bottom:10, right:70, height:50, width:50 },
+						layout: { bottom:5, right:160, height:15, width:15 },
 						useImageQueue: NO, 
-						value: '/static/endeavourlight/en/current/resources/images/sproutCounter.png?1296531574',
+						value: '/static/endeavourlight/en/current/resources/images/slideshowNotActive.png?1299015070',
 					}),
 					
 					selector6:SC.ImageView.design({
-						layout: { bottom:10, right:20, height:50, width:50 },
+						layout: { bottom:5, right:140, height:15, width:15 },
 						useImageQueue: NO, 
-						value: '/static/endeavourlight/en/current/resources/images/sproutCounter.png?1296531574',
+						value: '/static/endeavourlight/en/current/resources/images/slideshowNotActive.png?1299015070',
 					}),
 					
 				}),
