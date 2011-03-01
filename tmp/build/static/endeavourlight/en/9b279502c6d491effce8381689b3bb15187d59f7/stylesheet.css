@@ -1,0 +1,283 @@
+           /* ==========================================================================
+*  Project:   Endeavourlight Theme Styles
+*  Copyright: ©2011 My Company, Inc.
+*  ==========================================================================
+*/
+/* line 8, ././tmp/chance//Users/ceubanks/sproutcore/Portfolio/themes/endeavourlight/resources/theme_styles.css.scss */
+.base-view {
+  background-image: url('/static/endeavourlight/en/9b279502c6d491effce8381689b3bb15187d59f7/resources/images/base.png');
+}
+
+/* line 12, ././tmp/chance//Users/ceubanks/sproutcore/Portfolio/themes/endeavourlight/resources/theme_styles.css.scss */
+.globe-image {
+  background-image: url('/static/endeavourlight/en/9b279502c6d491effce8381689b3bb15187d59f7/resources/images/globe.png');
+}
+
+/* line 16, ././tmp/chance//Users/ceubanks/sproutcore/Portfolio/themes/endeavourlight/resources/theme_styles.css.scss */
+.tcb-text {
+  color: white;
+  font: 50px 'Zapfino';
+  font-size: 44px !important;
+  line-height: 160px !important;
+  margin-bottom: 0 !important;
+  z-index: 2;
+  text-shadow: 1px 3px 1px #292929;
+  letter-spacing: 2px;
+}
+
+/* line 27, ././tmp/chance//Users/ceubanks/sproutcore/Portfolio/themes/endeavourlight/resources/theme_styles.css.scss */
+.sliding-navigation {
+  background-image: url('/static/endeavourlight/en/9b279502c6d491effce8381689b3bb15187d59f7/resources/images/slidingNavigation.png');
+  outline-color: gray;
+  outline-style: solid;
+  outline-width: 1px;
+}
+
+/* line 34, ././tmp/chance//Users/ceubanks/sproutcore/Portfolio/themes/endeavourlight/resources/theme_styles.css.scss */
+.home-middleview {
+  background-image: url('/static/endeavourlight/en/9b279502c6d491effce8381689b3bb15187d59f7/resources/images/homeMiddleView.png');
+  outline-color: gray;
+  outline-style: solid;
+  outline-width: 1px;
+}
+
+/* line 41, ././tmp/chance//Users/ceubanks/sproutcore/Portfolio/themes/endeavourlight/resources/theme_styles.css.scss */
+.home-topview {
+  opacity: 0;
+}
+
+/* line 46, ././tmp/chance//Users/ceubanks/sproutcore/Portfolio/themes/endeavourlight/resources/theme_styles.css.scss */
+.home-middle-view {
+  opacity: 0;
+}
+
+/* line 50, ././tmp/chance//Users/ceubanks/sproutcore/Portfolio/themes/endeavourlight/resources/theme_styles.css.scss */
+.home-content-text-one {
+  color: white;
+  font: 50px 'Zapfino';
+  font-size: 18px !important;
+  line-height: 61px !important;
+}
+
+/* line 57, ././tmp/chance//Users/ceubanks/sproutcore/Portfolio/themes/endeavourlight/resources/theme_styles.css.scss */
+.home-content-text-two {
+  color: white;
+  font: 50px 'JosefinSansStd-Light';
+  font-size: 18px !important;
+  line-height: 22px !important;
+}
+
+/* line 64, ././tmp/chance//Users/ceubanks/sproutcore/Portfolio/themes/endeavourlight/resources/theme_styles.css.scss */
+.home-content-text-three {
+  color: white;
+  font: 50px 'JosefinSansStd-Light';
+  font-size: 18px !important;
+  line-height: 22px !important;
+}
+
+/* line 71, ././tmp/chance//Users/ceubanks/sproutcore/Portfolio/themes/endeavourlight/resources/theme_styles.css.scss */
+.home-bottomview-text {
+  color: white;
+  font: 50px 'daniel';
+  font-size: 20px !important;
+  line-height: 42px !important;
+}
+
+/* line 78, ././tmp/chance//Users/ceubanks/sproutcore/Portfolio/themes/endeavourlight/resources/theme_styles.css.scss */
+.profile-leftView {
+  background-image: url('/static/endeavourlight/en/9b279502c6d491effce8381689b3bb15187d59f7/resources/images/darkbase.png');
+}
+
+/* line 82, ././tmp/chance//Users/ceubanks/sproutcore/Portfolio/themes/endeavourlight/resources/theme_styles.css.scss */
+.profile-top-base-view {
+  background-image: url('/static/endeavourlight/en/9b279502c6d491effce8381689b3bb15187d59f7/resources/images/base.png');
+  z-index: 3;
+}
+
+/* line 87, ././tmp/chance//Users/ceubanks/sproutcore/Portfolio/themes/endeavourlight/resources/theme_styles.css.scss */
+.profile-appView {
+  z-index: 4;
+}
+
+/* line 91, ././tmp/chance//Users/ceubanks/sproutcore/Portfolio/themes/endeavourlight/resources/theme_styles.css.scss */
+.profile-listview-top {
+  background-image: url('/static/endeavourlight/en/9b279502c6d491effce8381689b3bb15187d59f7/resources/images/listViewTop1.png');
+}
+
+/* line 95, ././tmp/chance//Users/ceubanks/sproutcore/Portfolio/themes/endeavourlight/resources/theme_styles.css.scss */
+.profile-listview-middle {
+  background-image: url('/static/endeavourlight/en/9b279502c6d491effce8381689b3bb15187d59f7/resources/images/listViewMiddle.png');
+}
+
+/* line 99, ././tmp/chance//Users/ceubanks/sproutcore/Portfolio/themes/endeavourlight/resources/theme_styles.css.scss */
+.profile-listview-bottom {
+  background-image: url('/static/endeavourlight/en/9b279502c6d491effce8381689b3bb15187d59f7/resources/images/listViewBottom.png');
+}
+
+/* line 103, ././tmp/chance//Users/ceubanks/sproutcore/Portfolio/themes/endeavourlight/resources/theme_styles.css.scss */
+.app-content-text {
+  font-weight: normal;
+  color: black;
+  font: 18px 'JosefinSansStd-Light';
+  font-size: 18px !important;
+  line-height: 26px !important;
+}
+
+/* line 111, ././tmp/chance//Users/ceubanks/sproutcore/Portfolio/themes/endeavourlight/resources/theme_styles.css.scss */
+.sc-list-item-view.sel {
+  background-image: url('/static/endeavourlight/en/9b279502c6d491effce8381689b3bb15187d59f7/resources/images/listViewSelection.png');
+  color: white;
+  border-bottom-color: gray;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  max-width: 225px;
+}
+
+/* line 120, ././tmp/chance//Users/ceubanks/sproutcore/Portfolio/themes/endeavourlight/resources/theme_styles.css.scss */
+.sc-list-item-view.sc-regular-size {
+  font-weight: normal;
+  font-size: 18px;
+  border-bottom-color: gray;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  max-width: 225px;
+  font: 18px 'JosefinSansStd-Light';
+}
+
+/* line 130, ././tmp/chance//Users/ceubanks/sproutcore/Portfolio/themes/endeavourlight/resources/theme_styles.css.scss */
+.sc-list-item-view.has-icon label {
+  left: 50px;
+  margin-top: -5px;
+}
+
+/* line 135, ././tmp/chance//Users/ceubanks/sproutcore/Portfolio/themes/endeavourlight/resources/theme_styles.css.scss */
+.sc-list-item-view img.icon {
+  max-width: 40px;
+  max-height: 34px;
+  top: 36%;
+}
+
+/* line 141, ././tmp/chance//Users/ceubanks/sproutcore/Portfolio/themes/endeavourlight/resources/theme_styles.css.scss */
+.toolbar {
+  background-image: url('/static/endeavourlight/en/9b279502c6d491effce8381689b3bb15187d59f7/resources/images/toolbar.png');
+  z-index: 2;
+  -webkit-box-shadow: 0px 0px 5px black;
+  -moz-box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* line 152, ././tmp/chance//Users/ceubanks/sproutcore/Portfolio/themes/endeavourlight/resources/theme_styles.css.scss */
+.icon-one {
+  border-radius: 15px !important;
+}
+
+/* line 156, ././tmp/chance//Users/ceubanks/sproutcore/Portfolio/themes/endeavourlight/resources/theme_styles.css.scss */
+.sliding-navigation {
+  opacity: 0;
+}
+
+/* line 160, ././tmp/chance//Users/ceubanks/sproutcore/Portfolio/themes/endeavourlight/resources/theme_styles.css.scss */
+.landing-labels {
+  color: white;
+  font: 13px 'daniel';
+  letter-spacing: 2px;
+  text-align: 'center' !important;
+  line-height: 49px !important;
+  font-size: 15px !important;
+}
+
+/* line 170, ././tmp/chance//Users/ceubanks/sproutcore/Portfolio/themes/endeavourlight/resources/theme_styles.css.scss */
+.profile-middle-view {
+  opacity: 0;
+}
+
+/* line 174, ././tmp/chance//Users/ceubanks/sproutcore/Portfolio/themes/endeavourlight/resources/theme_styles.css.scss */
+.bottom-frame {
+  opacity: 0;
+}
+
+/* line 2, ././tmp/chance//Users/ceubanks/sproutcore/Portfolio/themes/endeavourlight/resources/buttonStyles.css.scss */
+.sc-button-view {
+  display: inline-block;
+  vertical-align: middle;
+  text-decoration: none;
+  border: 1px #555 none;
+}
+
+/* line 9, ././tmp/chance//Users/ceubanks/sproutcore/Portfolio/themes/endeavourlight/resources/buttonStyles.css.scss */
+.sc-button-view.sc-regular-size.square {
+  font-size: 12px;
+  max-height: 40px;
+  background-image: url('/static/endeavourlight/en/9b279502c6d491effce8381689b3bb15187d59f7/resources/images/buttonUp.png');
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* line 17, ././tmp/chance//Users/ceubanks/sproutcore/Portfolio/themes/endeavourlight/resources/buttonStyles.css.scss */
+.sc-button-view.sc-regular-size.square .sc-button-inner {
+  height: 24px;
+  max-height: 40px;
+  background-image: url('/static/endeavourlight/en/9b279502c6d491effce8381689b3bb15187d59f7/resources/images/buttonUp.png');
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* line 25, ././tmp/chance//Users/ceubanks/sproutcore/Portfolio/themes/endeavourlight/resources/buttonStyles.css.scss */
+.sc-button-view.sc-regular-size.square .sc-button-label {
+  height: 45px;
+  line-height: 42px;
+  margin-left: 11px;
+  margin-right: 11px;
+  background: none;
+  cursor: pointer;
+}
+
+/* line 34, ././tmp/chance//Users/ceubanks/sproutcore/Portfolio/themes/endeavourlight/resources/buttonStyles.css.scss */
+.sc-button-view.sc-regular-size.square.active {
+  background-image: url('/static/endeavourlight/en/9b279502c6d491effce8381689b3bb15187d59f7/resources/images/buttonDown.png');
+}
+
+/* line 38, ././tmp/chance//Users/ceubanks/sproutcore/Portfolio/themes/endeavourlight/resources/buttonStyles.css.scss */
+.sc-button-view.sc-regular-size.square.active .sc-button-inner {
+  background-image: url('/static/endeavourlight/en/9b279502c6d491effce8381689b3bb15187d59f7/resources/images/buttonDown.png');
+}
+
+/* line 42, ././tmp/chance//Users/ceubanks/sproutcore/Portfolio/themes/endeavourlight/resources/buttonStyles.css.scss */
+.sc-button-view.sc-regular-size.square.active .sc-button-label {
+  background: none;
+}
+
+/* line 47, ././tmp/chance//Users/ceubanks/sproutcore/Portfolio/themes/endeavourlight/resources/buttonStyles.css.scss */
+.sc-button-view.sc-regular-size.square.def,
+.sc-button-view.sc-regular-size.square.sel {
+  background-image: url('');
+}
+
+/* line 52, ././tmp/chance//Users/ceubanks/sproutcore/Portfolio/themes/endeavourlight/resources/buttonStyles.css.scss */
+.sc-button-view.sc-regular-size.square.def .sc-button-inner,
+.sc-button-view.sc-regular-size.square.sel .sc-button-inner {
+  background-image: url('');
+}
+
+/* line 57, ././tmp/chance//Users/ceubanks/sproutcore/Portfolio/themes/endeavourlight/resources/buttonStyles.css.scss */
+.sc-button-view.sc-regular-size.square.def .sc-button-label,
+.sc-button-view.sc-regular-size.square.sel .sc-button-label {
+  background: none;
+}
+
+/* line 62, ././tmp/chance//Users/ceubanks/sproutcore/Portfolio/themes/endeavourlight/resources/buttonStyles.css.scss */
+.sc-button-view.sc-regular-size.square.def.active,
+.sc-button-view.sc-regular-size.square.sel.active {
+  background-image: url('/static/endeavourlight/en/9b279502c6d491effce8381689b3bb15187d59f7/resources/images/buttonDown.png');
+}
+
+/* line 67, ././tmp/chance//Users/ceubanks/sproutcore/Portfolio/themes/endeavourlight/resources/buttonStyles.css.scss */
+.sc-button-view.sc-regular-size.square.def.active .sc-button-inner,
+.sc-button-view.sc-regular-size.square.sel.active .sc-button-inner {
+  background-image: url('/static/endeavourlight/en/9b279502c6d491effce8381689b3bb15187d59f7/resources/images/buttonDown.png');
+}
+
+/* line 72, ././tmp/chance//Users/ceubanks/sproutcore/Portfolio/themes/endeavourlight/resources/buttonStyles.css.scss */
+.sc-button-view.sc-regular-size.square.def.active .sc-button-label,
+.sc-button-view.sc-regular-size.square.sel.active .sc-button-label {
+  background: none;
+}
