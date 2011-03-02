@@ -5,3 +5,15 @@ Copyright: ©2011 The Code Boutique
 
 This is how we get down...
 
+- Included is a keynote presentation that we use to prototype our app.
+
+
+====Installation====
+
+- sudo gem install sproutcore --pre
+- git clone git@github.com:TheCodeBoutique/Portfolio.git
+- cd portfolio
+- cd frameworks
+- git clone git@github.com:FrozenCanuck/Ki.git
+- cd ..
+- sc-server
