@@ -53,6 +53,13 @@ SC.mixin(Thecodeboutique, {
 					// Function description: exits the current state and goes to the profile views enter state //
 					console.log('    goToHomePage: starts the enter state for the profile view');
 					this.gotoState('Home');
+				},
+				goToProfile:function() { 
+					this.gotoState('Profile');
+				},
+				goToContact:function()
+				{
+					this.gotoState('Contact');
 				}
 				
 			}), 
@@ -88,7 +95,11 @@ SC.mixin(Thecodeboutique, {
 				
 				goToProfile:function() { 
 					this.gotoState('Profile');
-				}
+				},
+				goToContact:function()
+				{
+					this.gotoState('Contact');
+				},
 				
 			}), 
 			
@@ -128,13 +139,23 @@ Profile: Ki.State.design({
 			Contact: Ki.State.design({
 				
 				enterState: function() {
-
-
+					console.log('Profile');
+					Thecodeboutique.getPath('mainPage.mainPane').remove();
+					Thecodeboutique.getPath('contactPage.mainPane').append();
 					
         	},
-					nextFunction:function()
+					goBackToHome:function()
 					{
-					}
+						Thecodeboutique.getPath('contactPage.mainPane').remove();
+						Thecodeboutique.getPath('homePage.mainPane').append();
+						Thecodeboutique.homePage.mainPane.middleView.animate('scale',0.001,{duration:.5, timing:'ease-in-out'});
+						this.gotoState('Home');
+					},
+					goToProfile:function() { 
+						Thecodeboutique.getPath('contactPage.mainPane').remove();
+						Thecodeboutique.getPath('profilePage.mainPane').append();
+						this.gotoState('Profile');
+					},
 			})
     })
   

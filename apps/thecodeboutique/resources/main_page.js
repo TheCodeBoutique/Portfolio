@@ -53,7 +53,7 @@ Thecodeboutique.mainPage = SC.Page.design({
 				
 				profile:SC.LabelView.design({
 					classNames:['landing-labels'],
-					layout: { bottom:0, height: 25, centerX: 0, width: 100 },
+					layout: { bottom:6, height: 30, left: 30, width: 60 },
 					escapeHTML: NO,
 					value:'Home',
 				}),
@@ -63,11 +63,20 @@ Thecodeboutique.mainPage = SC.Page.design({
 				classNames:['icon-one'],
 				layout:{right:150,centerY:0,height:100,width:100},
 				backgroundColor:'black',
+				mouseEntered: function(evt) {
+			   this.animate('scale',1.02,{duration:.3,timing:'ease-in-out'});
+			   return YES
+			  },
+				mouseExited: function() {
+					this.animate('scale',1,{duration:.3,timing:'ease-in-out'});
+		      return YES
+				},
+				mouseDown:function(evt){Thecodeboutique.statechart.sendEvent('goToProfile');},
 				childViews:'profile'.w(),
 				
 				profile:SC.LabelView.design({
 				 classNames:['landing-labels'],
-				 layout: { bottom:0, height: 25, centerX: 0, width: 100 },
+				 layout: { bottom:6, height: 30, left: 20, width: 100 },
 				 escapeHTML: NO,
 				 value:'Profile'
 				 }),
@@ -77,11 +86,20 @@ Thecodeboutique.mainPage = SC.Page.design({
 				classNames:['icon-one'],
 				layout:{right:10,centerY:0,height:100,width:100},
 				backgroundColor:'black',
+				mouseEntered: function(evt) {
+			   this.animate('scale',1.02,{duration:.3,timing:'ease-in-out'});
+			   return YES
+			  },
+				mouseExited: function() {
+					this.animate('scale',1,{duration:.3,timing:'ease-in-out'});
+		      return YES
+				},
+				mouseDown:function(evt){Thecodeboutique.statechart.sendEvent('goToContact');},
 				childViews:'profile'.w(),
 				
 				profile:SC.LabelView.design({
 				classNames:['landing-labels'],
-				layout: { bottom:0, height: 25, centerX: 0, width: 100 },
+				layout: { bottom:6, height: 30, left:20, width: 100 },
 				escapeHTML: NO,
 				value:'Contact'
 				}),
