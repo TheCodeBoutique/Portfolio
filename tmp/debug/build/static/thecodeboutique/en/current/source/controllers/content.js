@@ -26,15 +26,24 @@ Thecodeboutique.contentController = SC.ObjectController.create({
 	
 	_newMessage:function()
 	{
-		var a = Thecodeboutique.contentController.get('newMessage');
-		var b = Thecodeboutique.contentController.get('newName');
-		var c = Thecodeboutique.contentController.get('newEmail');
-		if(a === '' || b === '' || c === '')
+		var visitor;
+		
+		var newMessage = Thecodeboutique.contentController.get('newMessage');
+		var newName = Thecodeboutique.contentController.get('newName');
+		var newEmail = Thecodeboutique.contentController.get('newEmail');
+		if(newMessage === '' || newName === '' || newEmail === '')
 		{
 			alert('Please Fill out all fields');
 
 		}else
 		{
+			
+			visitor = Thecodeboutique.store.createRecord(Thecodeboutique.Visitor,{
+					"name": newName,
+					"email":newEmail,
+					"message":newMessage	
+		 }),
+		
 		console.log('submit');
 		alert('Thank you for submitting your comments');
 		Thecodeboutique.contentController.set('newMessage','');	
@@ -43,5 +52,7 @@ Thecodeboutique.contentController = SC.ObjectController.create({
 		}
 	}
 
+	    // create a new task in the store
+	  
 });
 ; if ((typeof SC !== 'undefined') && SC && SC.Module && SC.Module.scriptDidLoad) SC.Module.scriptDidLoad('thecodeboutique');

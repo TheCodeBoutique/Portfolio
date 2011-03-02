@@ -10,3 +10,5 @@ config :all, :required => [:sproutcore, :ki]
 # CONFIGURE THEMES
  config :thecodeboutique, :theme => 'endeavourlight'
  config :endeavourlight,  :theme_name => 'endeavourlight'
+
+proxy "/visitors", :to => "localhost:3000"
