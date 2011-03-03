@@ -28,66 +28,33 @@ Thecodeboutique.mainPage = SC.Page.design({
     slideInNav: SC.View.design({
 			classNames:['sliding-navigation'],
 			layout:{bottom:190, left:0, width:0,height:128},
-			childViews:'iconOne iconTwo iconThree '.w(),
+			childViews:'homeButton portfolioButton contactButton'.w(),
 			
 			
-			/*profileButton:SC.ButtonView.design({
-			  layout:{right:440,centerY:0,height:100,width:100},
-			  title:  "Profile",
-			}),*/
-			
-			iconOne:SC.View.design({
-				classNames:['icon-one'],
-				layout:{right:300,centerY:0,height:100,width:100},
-				backgroundColor:'black',
-				mouseEntered: function(evt) {
-			   this.animate('scale',1.02,{duration:.3,timing:'ease-in-out'});
-			   return YES
-			  },
-				mouseExited: function() {
-					this.animate('scale',1,{duration:.3,timing:'ease-in-out'});
-		      return YES
-				},
-				mouseDown:function(evt){Thecodeboutique.statechart.sendEvent('goToHomePage');},
-				childViews:'profile'.w(),
-				
-				profile:SC.LabelView.design({
-					classNames:['landing-labels'],
-					layout: { bottom:0, height: 25, centerX: 0, width: 100 },
-					escapeHTML: NO,
-					value:'Home',
-				}),
+			homeButton:SC.ButtonView.design({
+				classNames: ['home-button-large'],
+			  layout:{right:310,centerY:0,height:110,width:110},
+		 		target: "Thecodeboutique.statechart",
+				action: "goToHomePage",
 			}),
 			
-			iconTwo:SC.View.design({
-				classNames:['icon-one'],
-				layout:{right:150,centerY:0,height:100,width:100},
-				backgroundColor:'black',
-				childViews:'profile'.w(),
-				
-				profile:SC.LabelView.design({
-				 classNames:['landing-labels'],
-				 layout: { bottom:0, height: 25, centerX: 0, width: 100 },
-				 escapeHTML: NO,
-				 value:'Profile'
-				 }),
+			portfolioButton:SC.ButtonView.design({
+				classNames: ['portfolio-button-large'],
+			  layout:{right:160,centerY:0,height:110,width:110},
+		 		target: "Thecodeboutique.statechart",
+			  action: "goToPortfolio",
 			}),
 			
-			iconThree:SC.View.design({
-				classNames:['icon-one'],
-				layout:{right:10,centerY:0,height:100,width:100},
-				backgroundColor:'black',
-				childViews:'profile'.w(),
-				
-				profile:SC.LabelView.design({
-				classNames:['landing-labels'],
-				layout: { bottom:0, height: 25, centerX: 0, width: 100 },
-				escapeHTML: NO,
-				value:'Contact'
-				}),
+			contactButton:SC.ButtonView.design({
+				classNames: ['contact-button-large'],
+			  layout:{right:10,centerY:0,height:110,width:110},
+		 		target: "Thecodeboutique.statechart",
+			 	action: "goToContact",
 			}),
-
+			
 		}), //end of slideInNav
-  })
+  
+	})
+
 });
 ; if ((typeof SC !== 'undefined') && SC && SC.Module && SC.Module.scriptDidLoad) SC.Module.scriptDidLoad('thecodeboutique');

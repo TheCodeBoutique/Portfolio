@@ -10,21 +10,21 @@ $theme: '.ace.sc-regular-size';
   .left {
     width: 8px;
     height: 24px;
-    @extend .__s50_103;
+    @extend .__s53_103;
 background-position: _slice_offset_x("resources/segmented/24px/segmented_normal_100_0_8__0_", 0) _slice_offset_y("resources/segmented/24px/segmented_normal_100_0_8__0_", 0);background-repeat: none;
   }
   
   .right {
     width: 8px;
     height: 24px;
-    @extend .__s50_104;
+    @extend .__s53_104;
 background-position: _slice_offset_x("resources/segmented/24px/segmented_normal_92_0_8__0_", 0) _slice_offset_y("resources/segmented/24px/segmented_normal_92_0_8__0_", 0);background-repeat: none;
   }
   
   .middle {
     left: 8px; right: 8px;
     height: 24px;
-    @extend .__s50_105;
+    @extend .__s53_105;
 background-position: _slice_offset_x("resources/segmented/24px/segmented_normal_8_0_1__0_", 0) _slice_offset_y("resources/segmented/24px/segmented_normal_8_0_1__0_", 0);background-repeat: repeat-x;
   }
   
@@ -37,75 +37,75 @@ background-position: _slice_offset_x("resources/segmented/24px/segmented_normal_
   }
   
   &.sc-first-segment .left {
-    @extend .__s50_106;
+    @extend .__s53_106;
 background-position: _slice_offset_x("resources/segmented/24px/segmented_normal_0_0_8__0_", 0) _slice_offset_y("resources/segmented/24px/segmented_normal_0_0_8__0_", 0);background-repeat: none;
   }
     
   &.sc-last-segment .right {
-    @extend .__s50_107;
+    @extend .__s53_107;
 background-position: _slice_offset_x("resources/segmented/24px/segmented_normal__0_8__0_0", 0) _slice_offset_y("resources/segmented/24px/segmented_normal__0_8__0_0", 0);background-repeat: none;  
   }
   
   
   
   &.active {
-    .left { @extend .__s50_108;
+    .left { @extend .__s53_108;
 background-position: _slice_offset_x("resources/segmented/24px/segmented_active_100_0_8__0_", 0) _slice_offset_y("resources/segmented/24px/segmented_active_100_0_8__0_", 0);background-repeat: none; }
-    .right { @extend .__s50_109;
+    .right { @extend .__s53_109;
 background-position: _slice_offset_x("resources/segmented/24px/segmented_active_92_0_8__0_", 0) _slice_offset_y("resources/segmented/24px/segmented_active_92_0_8__0_", 0);background-repeat: none; }
-    .middle { @extend .__s50_110;
+    .middle { @extend .__s53_110;
 background-position: _slice_offset_x("resources/segmented/24px/segmented_active_8_0_1__0_", 0) _slice_offset_y("resources/segmented/24px/segmented_active_8_0_1__0_", 0);background-repeat: none; }
   }
   
   &.active.sc-first-segment {
-    .left { @extend .__s50_111;
+    .left { @extend .__s53_111;
 background-position: _slice_offset_x("resources/segmented/24px/segmented_active_0_0_8__0_", 0) _slice_offset_y("resources/segmented/24px/segmented_active_0_0_8__0_", 0);background-repeat: none; }
   }
   
   &.active.sc-last-segment {
-    .right { @extend .__s50_112;
+    .right { @extend .__s53_112;
 background-position: _slice_offset_x("resources/segmented/24px/segmented_active__0_8__0_0", 0) _slice_offset_y("resources/segmented/24px/segmented_active__0_8__0_0", 0);background-repeat: none; }
   }
   
   
   
   &.sel {
-    .left { @extend .__s50_113;
+    .left { @extend .__s53_113;
 background-position: _slice_offset_x("resources/segmented/24px/segmented_selected_100_0_8__0_", 0) _slice_offset_y("resources/segmented/24px/segmented_selected_100_0_8__0_", 0);background-repeat: none; }
-    .right { @extend .__s50_114;
+    .right { @extend .__s53_114;
 background-position: _slice_offset_x("resources/segmented/24px/segmented_selected_92_0_8__0_", 0) _slice_offset_y("resources/segmented/24px/segmented_selected_92_0_8__0_", 0);background-repeat: none; }
-    .middle { @extend .__s50_115;
+    .middle { @extend .__s53_115;
 background-position: _slice_offset_x("resources/segmented/24px/segmented_selected_8_0_1__0_", 0) _slice_offset_y("resources/segmented/24px/segmented_selected_8_0_1__0_", 0);background-repeat: none; }
   }
 
   &.sel.sc-first-segment {
-    .left { @extend .__s50_116;
+    .left { @extend .__s53_116;
 background-position: _slice_offset_x("resources/segmented/24px/segmented_selected_0_0_8__0_", 0) _slice_offset_y("resources/segmented/24px/segmented_selected_0_0_8__0_", 0);background-repeat: none; }
   }
 
   &.sel.sc-last-segment {
-    .right { @extend .__s50_117;
+    .right { @extend .__s53_117;
 background-position: _slice_offset_x("resources/segmented/24px/segmented_selected__0_8__0_0", 0) _slice_offset_y("resources/segmented/24px/segmented_selected__0_8__0_0", 0);background-repeat: none; }
   }
   
   
   
   &.sel.active {
-    .left { @extend .__s50_118;
+    .left { @extend .__s53_118;
 background-position: _slice_offset_x("resources/segmented/24px/segmented_selected_active_100_0_8__0_", 0) _slice_offset_y("resources/segmented/24px/segmented_selected_active_100_0_8__0_", 0);background-repeat: none; }
-    .right { @extend .__s50_119;
+    .right { @extend .__s53_119;
 background-position: _slice_offset_x("resources/segmented/24px/segmented_selected_active_92_0_8__0_", 0) _slice_offset_y("resources/segmented/24px/segmented_selected_active_92_0_8__0_", 0);background-repeat: none; }
-    .middle { @extend .__s50_120;
+    .middle { @extend .__s53_120;
 background-position: _slice_offset_x("resources/segmented/24px/segmented_selected_active_8_0_1__0_", 0) _slice_offset_y("resources/segmented/24px/segmented_selected_active_8_0_1__0_", 0);background-repeat: none; }
   }
 
   &.sel.active.sc-first-segment {
-    .left { @extend .__s50_121;
+    .left { @extend .__s53_121;
 background-position: _slice_offset_x("resources/segmented/24px/segmented_selected_active_0_0_8__0_", 0) _slice_offset_y("resources/segmented/24px/segmented_selected_active_0_0_8__0_", 0);background-repeat: none; }
   }
 
   &.sel.active.sc-last-segment {
-    .right { @extend .__s50_122;
+    .right { @extend .__s53_122;
 background-position: _slice_offset_x("resources/segmented/24px/segmented_selected_active__0_8__0_0", 0) _slice_offset_y("resources/segmented/24px/segmented_selected_active__0_8__0_0", 0);background-repeat: none; }
   }
 

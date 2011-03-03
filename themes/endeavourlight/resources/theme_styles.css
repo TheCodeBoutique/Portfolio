@@ -82,7 +82,6 @@
 	background-image: sc_static('/images/base.png');
 	z-index: 3;
 }
-
 .profile-appView{
 	z-index: 4;
 }
@@ -97,6 +96,15 @@
 
 .profile-listview-bottom{
 	background-image: sc_static('/images/listViewBottom.png');
+}
+
+.contact-leftView{
+	background-image: sc_static('/images/darkbase.png');
+	border-radius: 15px;
+}
+.contact-listview-middle{
+	background-image: sc_static('/images/contact-middle-view.png');
+	border-radius: 15px;
 }
 
 .app-content-text{
@@ -158,6 +166,7 @@
 .landing-labels
 {
 	color:white;
+	cursor: pointer;
 	font:13px 'daniel';
 	letter-spacing: 2px;
 	text-align:'center' !important;
