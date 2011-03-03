@@ -1,6 +1,7 @@
 # ===========================================================================
 # Project:   Thecodeboutique
-# Copyright: ©2011 My Company, Inc.
+# Copyright: ©2011 The Code Boutique
+# Engineered by Chad Eubanks and Kyle Carriedo
 # ===========================================================================
 
 # Add initial buildfile information here
