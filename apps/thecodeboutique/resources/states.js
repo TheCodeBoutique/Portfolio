@@ -54,8 +54,13 @@ SC.mixin(Thecodeboutique, {
 					console.log('    goToHomePage: starts the enter state for the profile view');
 					this.gotoState('Home');
 				},
+<<<<<<< HEAD
 				goToPortfolio:function() { 
 					this.gotoState('Portfolio');
+=======
+				goToProfile:function() { 
+					this.gotoState('Profile');
+>>>>>>> 1376c7abf43c539c9f41b029f446bc78c92ab5fe
 				},
 				goToContact:function()
 				{
@@ -76,7 +81,14 @@ SC.mixin(Thecodeboutique, {
 						Thecodeboutique.homePage.mainPane.middleView.animate('opacity',1,{duration:.5, timing:'ease-in-out'});
 						this.invokeLater(this.scaleIn,500);
 						Thecodeboutique.homePage.mainPane.middleView.animate('scale',0.001,{duration:.5, timing:'ease-in-out'});
+						
+						this.loadData();
         	},
+					loadData:function()
+					{
+						sc_require('models/visitor');
+						Thecodeboutique.VISITOR_QUERY = SC.Query.local(Thecodeboutique.Visitor);
+					},
 				
 				scaleIn:function() {
 						Thecodeboutique.homePage.mainPane.middleView.animate('scale',1.3,{duration:.5, timing:'ease-in-out'},this.invokeLater(this.backDown,500));
@@ -93,8 +105,13 @@ SC.mixin(Thecodeboutique, {
 					this.gotoState('Exit');
 				},
 				
+<<<<<<< HEAD
 				goToPortfolio:function() { 
 					this.gotoState('Portfolio');
+=======
+				goToProfile:function() { 
+					this.gotoState('Profile');
+>>>>>>> 1376c7abf43c539c9f41b029f446bc78c92ab5fe
 				},
 				goToContact:function()
 				{
@@ -151,10 +168,17 @@ Portfolio: Ki.State.design({
 						Thecodeboutique.homePage.mainPane.middleView.animate('scale',0.001,{duration:.5, timing:'ease-in-out'});
 						this.gotoState('Home');
 					},
+<<<<<<< HEAD
 					goToPortfolio:function() { 
 						Thecodeboutique.getPath('contactPage.mainPane').remove();
 						Thecodeboutique.getPath('profilePage.mainPane').append();
 						this.gotoState('Portfolio');
+=======
+					goToProfile:function() { 
+						Thecodeboutique.getPath('contactPage.mainPane').remove();
+						Thecodeboutique.getPath('profilePage.mainPane').append();
+						this.gotoState('Profile');
+>>>>>>> 1376c7abf43c539c9f41b029f446bc78c92ab5fe
 					},
 			})
     })

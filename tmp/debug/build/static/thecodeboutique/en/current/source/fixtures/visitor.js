@@ -8,6 +8,7 @@ sc_require('models/visitor');
 
 Thecodeboutique.Visitor.FIXTURES = [
 
+<<<<<<< HEAD
   // TODO: Add your data fixtures here.
   // All fixture records must have a unique primary key (default 'guid').  See 
   // the example below.
@@ -31,6 +32,9 @@ Thecodeboutique.Visitor.FIXTURES = [
   // { guid: 5,
   //   firstName: "Ryan",
   //   lastName: "Howard" }
+=======
+
+>>>>>>> 1376c7abf43c539c9f41b029f446bc78c92ab5fe
 
 ];
 ; if ((typeof SC !== 'undefined') && SC && SC.Module && SC.Module.scriptDidLoad) SC.Module.scriptDidLoad('thecodeboutique');
