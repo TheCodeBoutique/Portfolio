@@ -28,34 +28,7 @@ Thecodeboutique.mainPage = SC.Page.design({
     slideInNav: SC.View.design({
 			classNames:['sliding-navigation'],
 			layout:{bottom:190, left:0, width:0,height:128},
-			childViews:'homeButton portfolioButton contactButton'.w(),
-			
-			
-<<<<<<< HEAD
-			homeButton:SC.ButtonView.design({
-				classNames: ['home-button-large'],
-			  layout:{right:310,centerY:0,height:110,width:110},
-		 		target: "Thecodeboutique.statechart",
-				action: "goToHomePage",
-			}),
-			
-			portfolioButton:SC.ButtonView.design({
-				classNames: ['portfolio-button-large'],
-			  layout:{right:160,centerY:0,height:110,width:110},
-		 		target: "Thecodeboutique.statechart",
-			  action: "goToPortfolio",
-			}),
-			
-			contactButton:SC.ButtonView.design({
-				classNames: ['contact-button-large'],
-			  layout:{right:10,centerY:0,height:110,width:110},
-		 		target: "Thecodeboutique.statechart",
-			 	action: "goToContact",
-=======
-			/*profileButton:SC.ButtonView.design({
-			  layout:{right:440,centerY:0,height:100,width:100},
-			  title:  "Profile",
-			}),*/
+			childViews:'iconOne iconTwo iconThree '.w(),
 			
 			iconOne:SC.View.design({
 				classNames:['icon-one'],
@@ -124,12 +97,9 @@ Thecodeboutique.mainPage = SC.Page.design({
 				escapeHTML: NO,
 				value:'Contact'
 				}),
->>>>>>> 1376c7abf43c539c9f41b029f446bc78c92ab5fe
 			}),
-			
-		}), //end of slideInNav
-  
-	})
 
+		}), //end of slideInNav
+  })
 });
 ; if ((typeof SC !== 'undefined') && SC && SC.Module && SC.Module.scriptDidLoad) SC.Module.scriptDidLoad('thecodeboutique');

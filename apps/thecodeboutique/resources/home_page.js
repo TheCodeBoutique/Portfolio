@@ -35,14 +35,12 @@ Thecodeboutique.homePage = SC.Page.design({
 			  layout: { top:40, height: 40, left: 288, width: 106 },
 			  title:  "Portfolio",
 				target: "Thecodeboutique.statechart",
-			  action: "goToPortfolio",
+				action: "goToProfile",
 			}),
 			
 			contactButton:SC.ButtonView.design({
 			  layout: { top:40, height: 40, left: 426, width: 106 },
 			  title:  "Contact",
-				target: "Thecodeboutique.statechart",
-			 	action: "goToContact",
 			}),
 		}),
     

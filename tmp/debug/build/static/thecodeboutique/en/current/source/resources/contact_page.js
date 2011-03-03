@@ -19,20 +19,12 @@ Thecodeboutique.contactPage = SC.Page.design({
 		topView: SC.View.design({
 			classNames:['profile-top-base-view'],
 			layout: { top: 0, left: 0, right: 0, height: 120 },  
-<<<<<<< HEAD
-			childViews:'logo homeButton portfolioButton contactButton'.w(),
-=======
 			childViews:'logo homeButton contributionButton contactButton'.w(),
->>>>>>> 1376c7abf43c539c9f41b029f446bc78c92ab5fe
     	
 			logo:SC.ImageView.design({
 		 		layout: { left:20,top:20, height:100, width: 100 },
 		 		useImageQueue: NO, 
-<<<<<<< HEAD
-		 		value: '/static/endeavourlight/en/current/resources/images/globe.png?1299044131',
-=======
 		 		value: '/static/endeavourlight/en/current/resources/images/globe.png?1299028414',
->>>>>>> 1376c7abf43c539c9f41b029f446bc78c92ab5fe
 			}),
 			
 			homeButton:SC.ButtonView.design({
@@ -42,31 +34,18 @@ Thecodeboutique.contactPage = SC.Page.design({
 			 action: "goBackToHome",
 			}),
 			
-<<<<<<< HEAD
-			portfolioButton:SC.ButtonView.design({
-				layout: { top:40, height: 40, left: 288, width: 106 },
-			 	title:  "Portfolio",
-			  target: "Thecodeboutique.statechart",
-			  action: "goToPortfolio",
-=======
 			contributionButton:SC.ButtonView.design({
 				layout: { top:40, height: 40, left: 288, width: 106 },
 			 	title:  "Portfolio",
 			  target: "Thecodeboutique.statechart",
 			  action: "goToContribution",
->>>>>>> 1376c7abf43c539c9f41b029f446bc78c92ab5fe
 			 }),
 			 
 			contactButton:SC.ButtonView.design({
 				layout: { top:40, height: 40, left: 426, width: 106 },
 				title:  "Contact",
-<<<<<<< HEAD
-			 	target: "Thecodeboutique.statechart",
-			 	action: "goToContact",
-=======
 			 	//target: "Thecodeboutique.statechart",
 			 	//action: "goToContact",
->>>>>>> 1376c7abf43c539c9f41b029f446bc78c92ab5fe
 			}),
 			
 		}),//end of topView

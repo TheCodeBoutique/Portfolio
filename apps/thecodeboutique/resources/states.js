@@ -11,9 +11,9 @@ SC.mixin(Thecodeboutique, {
 					// sets the navigation buttons reversed //
   				console.log('enterState: mainPage.mainPane w/ animated navigation');
 					Thecodeboutique.getPath('mainPage.mainPane').append();
-					Thecodeboutique.mainPage.mainPane.slideInNav.homeButton.animate('rotateY',180,{duration:1.0, timing:'ease-in-out'});
-					Thecodeboutique.mainPage.mainPane.slideInNav.portfolioButton.animate('rotateY',180,{duration:1.2, timing:'ease-in-out'});
-					Thecodeboutique.mainPage.mainPane.slideInNav.contactButton.animate('rotateY',180,{duration:1.4, timing:'ease-in-out'});
+					Thecodeboutique.mainPage.mainPane.slideInNav.iconOne.animate('rotateY',180,{duration:1.0, timing:'ease-in-out'});
+					Thecodeboutique.mainPage.mainPane.slideInNav.iconTwo.animate('rotateY',180,{duration:1.2, timing:'ease-in-out'});
+					Thecodeboutique.mainPage.mainPane.slideInNav.iconThree.animate('rotateY',180,{duration:1.4, timing:'ease-in-out'});
 					Thecodeboutique.mainPage.mainPane.tcbText.animate('opacity',0.0,{duration:1, timing:'ease-in-out'});
 					// sets the content in the controller apps //
 					// sets the profilePage.mainPane //
@@ -29,7 +29,7 @@ SC.mixin(Thecodeboutique, {
 				slideNavigationBarIn:function() {
 					// Function description: slides the navigation bar in and delays the flipping navigation buttons //
 					console.log('    slideNavigationBarIn: slides the navigation bar in from the left');
-					Thecodeboutique.mainPage.mainPane.slideInNav.animate('opacity',0.9,{duration:1, timing:'ease-in-out'});
+					Thecodeboutique.mainPage.mainPane.slideInNav.animate('opacity',0.8,{duration:1, timing:'ease-in-out'});
 					Thecodeboutique.mainPage.mainPane.slideInNav.animate('width',.9999,{duration:1, timing:'ease-in-out'});
 					this.invokeLater(this.adjustTCBTextOpacity,500);
 				},
@@ -44,9 +44,9 @@ SC.mixin(Thecodeboutique, {
 				flipNavigationButtons:function() {
 					// Function description: flips the navigation buttons 180 degrees //
 					console.log('    flipNavigationButtons: flips the navigation buttons 180 degrees');
-					Thecodeboutique.mainPage.mainPane.slideInNav.homeButton.animate('rotateY',0,{duration:1.0, timing:'ease-in-out'});
-					Thecodeboutique.mainPage.mainPane.slideInNav.portfolioButton.animate('rotateY',0,{duration:1.2, timing:'ease-in-out'});
-					Thecodeboutique.mainPage.mainPane.slideInNav.contactButton.animate('rotateY',0,{duration:1.4, timing:'ease-in-out'});
+					Thecodeboutique.mainPage.mainPane.slideInNav.iconOne.animate('rotateY',0,{duration:1.0, timing:'ease-in-out'});
+					Thecodeboutique.mainPage.mainPane.slideInNav.iconTwo.animate('rotateY',0,{duration:1.2, timing:'ease-in-out'});
+					Thecodeboutique.mainPage.mainPane.slideInNav.iconThree.animate('rotateY',0,{duration:1.4, timing:'ease-in-out'});
 				},
 				
 				goToHomePage:function() {
@@ -54,13 +54,8 @@ SC.mixin(Thecodeboutique, {
 					console.log('    goToHomePage: starts the enter state for the profile view');
 					this.gotoState('Home');
 				},
-<<<<<<< HEAD
-				goToPortfolio:function() { 
-					this.gotoState('Portfolio');
-=======
 				goToProfile:function() { 
 					this.gotoState('Profile');
->>>>>>> 1376c7abf43c539c9f41b029f446bc78c92ab5fe
 				},
 				goToContact:function()
 				{
@@ -105,13 +100,8 @@ SC.mixin(Thecodeboutique, {
 					this.gotoState('Exit');
 				},
 				
-<<<<<<< HEAD
-				goToPortfolio:function() { 
-					this.gotoState('Portfolio');
-=======
 				goToProfile:function() { 
 					this.gotoState('Profile');
->>>>>>> 1376c7abf43c539c9f41b029f446bc78c92ab5fe
 				},
 				goToContact:function()
 				{
@@ -123,10 +113,10 @@ SC.mixin(Thecodeboutique, {
 // end of the home view //
 // start of the portfolio view //
 
-Portfolio: Ki.State.design({
+Profile: Ki.State.design({
 				
 				enterState: function() {
-					console.log('Porfolio');
+					console.log('Profile');
 					Thecodeboutique.getPath('mainPage.mainPane').remove();
 					Thecodeboutique.getPath('profilePage.mainPane').append();
 					
@@ -168,17 +158,10 @@ Portfolio: Ki.State.design({
 						Thecodeboutique.homePage.mainPane.middleView.animate('scale',0.001,{duration:.5, timing:'ease-in-out'});
 						this.gotoState('Home');
 					},
-<<<<<<< HEAD
-					goToPortfolio:function() { 
-						Thecodeboutique.getPath('contactPage.mainPane').remove();
-						Thecodeboutique.getPath('profilePage.mainPane').append();
-						this.gotoState('Portfolio');
-=======
 					goToProfile:function() { 
 						Thecodeboutique.getPath('contactPage.mainPane').remove();
 						Thecodeboutique.getPath('profilePage.mainPane').append();
 						this.gotoState('Profile');
->>>>>>> 1376c7abf43c539c9f41b029f446bc78c92ab5fe
 					},
 			})
     })
