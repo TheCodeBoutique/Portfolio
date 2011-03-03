@@ -152,6 +152,13 @@ Portfolio: Ki.State.design({
 					Thecodeboutique.getPath('mainPage.mainPane').remove();
 					Thecodeboutique.getPath('contactPage.mainPane').append();
 					
+					// Reset home page to its default state //
+					Thecodeboutique.getPath('homePage.mainPane')
+					Thecodeboutique.homePage.mainPane.middleView.animate('opacity',0.0,{duration:.5, timing:'ease-in-out'});
+					Thecodeboutique.homePage.mainPane.middleView.animate('scale',0.001,{duration:.5, timing:'ease-in-out'});
+					Thecodeboutique.homePage.mainPane.bottomView.animate('opacity',0.0,{duration:1.5, timing:'ease-in-out'});
+					Thecodeboutique.homePage.mainPane.topView.animate('opacity',0.0,{duration:1.5, timing:'ease-in-out'});
+					Thecodeboutique.homePage.mainPane.middleView.contentFrame.animate('width',0,{duration:.5, timing:'ease-in-out'});
         	},
 					goBackToHome:function()
 					{

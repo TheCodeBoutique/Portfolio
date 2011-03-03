@@ -19,7 +19,7 @@ Thecodeboutique.contactPage = SC.Page.design({
 		topView: SC.View.design({
 			classNames:['profile-top-base-view'],
 			layout: { top: 0, left: 0, right: 0, height: 120 },  
-			childViews:'logo homeButton contributionButton contactButton'.w(),
+			childViews:'logo homeButton portfolioButton contactButton'.w(),
     	
 			logo:SC.ImageView.design({
 		 		layout: { left:20,top:20, height:100, width: 100 },
@@ -34,11 +34,11 @@ Thecodeboutique.contactPage = SC.Page.design({
 			 action: "goBackToHome",
 			}),
 			
-			contributionButton:SC.ButtonView.design({
+			portfolioButton:SC.ButtonView.design({
 				layout: { top:40, height: 40, left: 288, width: 106 },
 			 	title:  "Portfolio",
 			  target: "Thecodeboutique.statechart",
-			  action: "goToContribution",
+			  action: "goToPortfolio",
 			 }),
 			 
 			contactButton:SC.ButtonView.design({
