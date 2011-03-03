@@ -24,7 +24,7 @@ Thecodeboutique.contactPage = SC.Page.design({
 			logo:SC.ImageView.design({
 		 		layout: { left:20,top:20, height:100, width: 100 },
 		 		useImageQueue: NO, 
-		 		value: '/static/endeavourlight/en/current/resources/images/globe.png?1299028414',
+		 		value: '/static/endeavourlight/en/current/resources/images/globe.png?1299044131',
 			}),
 			
 			homeButton:SC.ButtonView.design({

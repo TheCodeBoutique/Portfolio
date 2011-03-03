@@ -28,77 +28,32 @@ Thecodeboutique.mainPage = SC.Page.design({
     slideInNav: SC.View.design({
 			classNames:['sliding-navigation'],
 			layout:{bottom:190, left:0, width:0,height:128},
-			childViews:'iconOne iconTwo iconThree '.w(),
-			
-			iconOne:SC.View.design({
-				classNames:['icon-one'],
-				layout:{right:300,centerY:0,height:100,width:100},
-				backgroundColor:'black',
-				mouseEntered: function(evt) {
-			   this.animate('scale',1.02,{duration:.3,timing:'ease-in-out'});
-			   return YES
-			  },
-				mouseExited: function() {
-					this.animate('scale',1,{duration:.3,timing:'ease-in-out'});
-		      return YES
-				},
-				mouseDown:function(evt){Thecodeboutique.statechart.sendEvent('goToHomePage');},
-				childViews:'profile'.w(),
-				
-				profile:SC.LabelView.design({
-					classNames:['landing-labels'],
-					layout: { bottom:6, height: 30, left: 30, width: 60 },
-					escapeHTML: NO,
-					value:'Home',
-				}),
-			}),
-			
-			iconTwo:SC.View.design({
-				classNames:['icon-one'],
-				layout:{right:150,centerY:0,height:100,width:100},
-				backgroundColor:'black',
-				mouseEntered: function(evt) {
-			   this.animate('scale',1.02,{duration:.3,timing:'ease-in-out'});
-			   return YES
-			  },
-				mouseExited: function() {
-					this.animate('scale',1,{duration:.3,timing:'ease-in-out'});
-		      return YES
-				},
-				mouseDown:function(evt){Thecodeboutique.statechart.sendEvent('goToProfile');},
-				childViews:'profile'.w(),
-				
-				profile:SC.LabelView.design({
-				 classNames:['landing-labels'],
-				 layout: { bottom:6, height: 30, left: 20, width: 100 },
-				 escapeHTML: NO,
-				 value:'Profile'
-				 }),
-			}),
-			
-			iconThree:SC.View.design({
-				classNames:['icon-one'],
-				layout:{right:10,centerY:0,height:100,width:100},
-				backgroundColor:'black',
-				mouseEntered: function(evt) {
-			   this.animate('scale',1.02,{duration:.3,timing:'ease-in-out'});
-			   return YES
-			  },
-				mouseExited: function() {
-					this.animate('scale',1,{duration:.3,timing:'ease-in-out'});
-		      return YES
-				},
-				mouseDown:function(evt){Thecodeboutique.statechart.sendEvent('goToContact');},
-				childViews:'profile'.w(),
-				
-				profile:SC.LabelView.design({
-				classNames:['landing-labels'],
-				layout: { bottom:6, height: 30, left:20, width: 100 },
-				escapeHTML: NO,
-				value:'Contact'
-				}),
-			}),
+			childViews:'homeButton portfolioButton contactButton'.w(),
 
+			homeButton:SC.ButtonView.design({
+				classNames: ['home-button-large'],
+			  layout:{right:310,centerY:0,height:110,width:110},
+		 		target: "Thecodeboutique.statechart",
+				action: "goToHomePage",
+			}),
+			
+			portfolioButton:SC.ButtonView.design({
+				classNames: ['portfolio-button-large'],
+			  layout:{right:160,centerY:0,height:110,width:110},
+		 		target: "Thecodeboutique.statechart",
+			  action: "goToPortfolio",
+			}),
+			
+			contactButton:SC.ButtonView.design({
+				classNames: ['contact-button-large'],
+			  layout:{right:10,centerY:0,height:110,width:110},
+		 		target: "Thecodeboutique.statechart",
+			 	action: "goToContact",
+
+			}),
+			
 		}), //end of slideInNav
-  })
+  
+	})
+
 });

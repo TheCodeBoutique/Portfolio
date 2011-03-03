@@ -23,7 +23,7 @@ Thecodeboutique.homePage = SC.Page.design({
 			globe: SC.ImageView.design({
 			 layout: { left:20,top:20, height:100, width: 100 },
 			 useImageQueue: NO, 
-			 value: '/static/endeavourlight/en/current/resources/images/globe.png?1298669205',
+			 value: '/static/endeavourlight/en/current/resources/images/globe.png?1299044131',
 			}),
 			
 			homeButton:SC.ButtonView.design({
@@ -35,12 +35,14 @@ Thecodeboutique.homePage = SC.Page.design({
 			  layout: { top:40, height: 40, left: 288, width: 106 },
 			  title:  "Portfolio",
 				target: "Thecodeboutique.statechart",
-				action: "goToProfile",
+			  action: "goToPortfolio",
 			}),
 			
 			contactButton:SC.ButtonView.design({
 			  layout: { top:40, height: 40, left: 426, width: 106 },
 			  title:  "Contact",
+				target: "Thecodeboutique.statechart",
+			 	action: "goToContact",
 			}),
 		}),
     
@@ -56,9 +58,9 @@ Thecodeboutique.homePage = SC.Page.design({
 				value: '',
 				imageArray:function() {
 					var images = [];
-					var image2 = '/static/endeavourlight/en/current/resources/images/tutorials.png?1298455525';
-					var image4 = '/static/endeavourlight/en/current/resources/images/animate.png?1298455920';
-					var image6 = '/static/endeavourlight/en/current/resources/images/hacktime.png?1298455686';
+					var image2 = '/static/endeavourlight/en/current/resources/images/tutorials.png?1299044131';
+					var image4 = '/static/endeavourlight/en/current/resources/images/animate.png?1299044131';
+					var image6 = '/static/endeavourlight/en/current/resources/images/hacktime.png?1299044131';
 					images = [image2,image4,image6];
 					this.set('value',images[i]);
 					this.invokeLater(this.fadeit,3200);
@@ -68,9 +70,9 @@ Thecodeboutique.homePage = SC.Page.design({
 				
 				fadeit:function(){
 					var images = [];
-					var image2 = '/static/endeavourlight/en/current/resources/images/tutorials.png?1298455525';
-					var image4 = '/static/endeavourlight/en/current/resources/images/animate.png?1298455920';
-					var image6 = '/static/endeavourlight/en/current/resources/images/hacktime.png?1298455686';
+					var image2 = '/static/endeavourlight/en/current/resources/images/tutorials.png?1299044131';
+					var image4 = '/static/endeavourlight/en/current/resources/images/animate.png?1299044131';
+					var image6 = '/static/endeavourlight/en/current/resources/images/hacktime.png?1299044131';
 					images = [image2,image4,image6];
 					if(i<2){
 						i++;
@@ -90,9 +92,9 @@ Thecodeboutique.homePage = SC.Page.design({
 				value: '',
 				imageArray:function(){
 					var images = [];
-					var image1 = '/static/endeavourlight/en/current/resources/images/comunity.png?1298455806';
-					var image3 = '/static/endeavourlight/en/current/resources/images/end.png?1298456259';
-					var image5 = '/static/endeavourlight/en/current/resources/images/Game.png?1298456926';
+					var image1 = '/static/endeavourlight/en/current/resources/images/comunity.png?1299044131';
+					var image3 = '/static/endeavourlight/en/current/resources/images/end.png?1299044131';
+					var image5 = '/static/endeavourlight/en/current/resources/images/Game.png?1299044131';
 					images = [image1,image3,image5];
 					this.set('value',images[i]);
 					this.invokeLater(this.fadeit,3200);
@@ -106,8 +108,8 @@ Thecodeboutique.homePage = SC.Page.design({
 						}else{
 							t =0;
 						};
-						var active = '/static/endeavourlight/en/current/resources/images/slideshowActive.png?1299015071';
-						var inactive = '/static/endeavourlight/en/current/resources/images/slideshowNotActive.png?1299015070';
+						var active = '/static/endeavourlight/en/current/resources/images/slideshowActive.png?1299044131';
+						var inactive = '/static/endeavourlight/en/current/resources/images/slideshowNotActive.png?1299044131';
 						if(t === 0){
 							Thecodeboutique.homePage.mainPane.middleView.selectorFrame.selector6.set('value',inactive);
 							Thecodeboutique.homePage.mainPane.middleView.selectorFrame.selector1.set('value',active);
@@ -128,9 +130,9 @@ Thecodeboutique.homePage = SC.Page.design({
 							Thecodeboutique.homePage.mainPane.middleView.selectorFrame.selector6.set('value',active);
 						}
 						var images = [];
-						var image1 = '/static/endeavourlight/en/current/resources/images/comunity.png?1298455806';
-						var image3 = '/static/endeavourlight/en/current/resources/images/end.png?1298456259';
-						var image5 = '/static/endeavourlight/en/current/resources/images/Game.png?1298456926';
+						var image1 = '/static/endeavourlight/en/current/resources/images/comunity.png?1299044131';
+						var image3 = '/static/endeavourlight/en/current/resources/images/end.png?1299044131';
+						var image5 = '/static/endeavourlight/en/current/resources/images/Game.png?1299044131';
 						images = [image1,image3,image5];
 						if(i<2){
 							i++;
@@ -151,37 +153,37 @@ Thecodeboutique.homePage = SC.Page.design({
 					selector1:SC.ImageView.design({
 						layout: { bottom:5, right:240, height:15, width:15 },
 						useImageQueue: NO, 
-						value: '/static/endeavourlight/en/current/resources/images/slideshowNotActive.png?1299015070',
+						value: '/static/endeavourlight/en/current/resources/images/slideshowNotActive.png?1299044131',
 					}),
 					
 					selector2:SC.ImageView.design({
 						layout: { bottom:5, right:220, height:15, width:15 },
 						useImageQueue: NO, 
-						value: '/static/endeavourlight/en/current/resources/images/slideshowNotActive.png?1299015070',
+						value: '/static/endeavourlight/en/current/resources/images/slideshowNotActive.png?1299044131',
 					}),
 					
 					selector3:SC.ImageView.design({
 						layout: { bottom:5, right:200, height:15, width:15 },
 						useImageQueue: NO, 
-						value: '/static/endeavourlight/en/current/resources/images/slideshowNotActive.png?1299015070',
+						value: '/static/endeavourlight/en/current/resources/images/slideshowNotActive.png?1299044131',
 					}),
 					
 					selector4:SC.ImageView.design({
 						layout: { bottom:5, right:180, height:15, width:15 },
 						useImageQueue: NO, 
-						value: '/static/endeavourlight/en/current/resources/images/slideshowNotActive.png?1299015070',
+						value: '/static/endeavourlight/en/current/resources/images/slideshowNotActive.png?1299044131',
 					}),
 					
 					selector5:SC.ImageView.design({
 						layout: { bottom:5, right:160, height:15, width:15 },
 						useImageQueue: NO, 
-						value: '/static/endeavourlight/en/current/resources/images/slideshowNotActive.png?1299015070',
+						value: '/static/endeavourlight/en/current/resources/images/slideshowNotActive.png?1299044131',
 					}),
 					
 					selector6:SC.ImageView.design({
 						layout: { bottom:5, right:140, height:15, width:15 },
 						useImageQueue: NO, 
-						value: '/static/endeavourlight/en/current/resources/images/slideshowNotActive.png?1299015070',
+						value: '/static/endeavourlight/en/current/resources/images/slideshowNotActive.png?1299044131',
 					}),
 					
 				}),
@@ -238,25 +240,25 @@ Thecodeboutique.homePage = SC.Page.design({
 				image1:SC.ImageView.design({
 					layout: { left:25, top:50, height:124, width: 264 },
 					useImageQueue: NO, 
-					value: '/static/endeavourlight/en/current/resources/images/animationBanner.png?1298974856',
+					value: '/static/endeavourlight/en/current/resources/images/animationBanner.png?1299044131',
 				}),
 				
 				image2:SC.ImageView.design({
 					layout: { left:319, top:50, height:126, width: 265 },
 					useImageQueue: NO, 
-					value: '/static/endeavourlight/en/current/resources/images/communityBanner.png?1298936609',
+					value: '/static/endeavourlight/en/current/resources/images/communityBanner.png?1299044131',
 				}),
 				
 				image3:SC.ImageView.design({
 					layout: { right:319, top:50, height:126, width: 264 },
 					useImageQueue: NO, 
-					value: '/static/endeavourlight/en/current/resources/images/cloudTrainingBanner.png?1298936641',
+					value: '/static/endeavourlight/en/current/resources/images/cloudTrainingBanner.png?1299044131',
 				}),
 		  	
 				image4:SC.ImageView.design({
 		 		 layout: { right:25, top:50, height:123, width: 265 },
 		 		 useImageQueue: NO, 
-		 		 value: '/static/endeavourlight/en/current/resources/images/endeavourBanner.png?1298936827',
+		 		 value: '/static/endeavourlight/en/current/resources/images/endeavourBanner.png?1299044131',
 		  	}),
 		
 			}),
