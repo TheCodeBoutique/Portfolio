@@ -8,7 +8,7 @@
  .home-button-large.sc-button-view.sc-regular-size.square {
   font-size: 12px;
   max-height: 120px;
-	background-image: sc_static('/images/homeButtonUp.png');
+	background: no-repeat sc_static('/images/buttonsLarge.png') 0 -475px;
 	border-radius: 5px;
 	cursor: pointer;
 }
@@ -16,7 +16,7 @@
  .home-button-large.sc-button-view.sc-regular-size.square .sc-button-inner {
   height: 24px;
   max-height: 110px;
-	background-image: sc_static('/images/homeButtonUp.png');
+	background: no-repeat sc_static('/images/buttonsLarge.png') 0 -475px;
 	border-radius: 5px;
 	cursor: pointer;
 }
@@ -31,11 +31,11 @@
 	}
 
  .home-button-large.sc-button-view.sc-regular-size.square.active {
-	background-image: sc_static('/images/homeButtonDown.png');
+	background: no-repeat sc_static('/images/buttonsLarge.png') 0 -318px;
 }
 
  .home-button-large.sc-button-view.sc-regular-size.square.active .sc-button-inner {
-	background-image: sc_static('/images/homeButtonDown.png');
+	background: no-repeat sc_static('/images/buttonsLarge.png') 0 -318px;
 }
 
  .home-button-large.sc-button-view.sc-regular-size.square.active .sc-button-label {
@@ -59,12 +59,12 @@
 
  .home-button-large.sc-button-view.sc-regular-size.square.def.active,
  .home-button-large.sc-button-view.sc-regular-size.square.sel.active {
-	background-image: sc_static('/images/homeButtonDown.png');
+	background: no-repeat sc_static('/images/buttonsLarge.png') 0 -318px;
 }
 
  .home-button-large.sc-button-view.sc-regular-size.square.def.active .sc-button-inner,
  .home-button-large.sc-button-view.sc-regular-size.square.sel.active .sc-button-inner {
-	background-image: sc_static('/images/homeButtonDown.png');
+	background: no-repeat sc_static('/images/buttonsLarge.png') 0 -318px;
 }
 
  .home-button-large.sc-button-view.sc-regular-size.square.def.active .sc-button-label,

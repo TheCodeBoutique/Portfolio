@@ -9,7 +9,7 @@ $theme: '';.contact-button-large.sc-button-view {
  .contact-button-large.sc-button-view.sc-regular-size.square {
   font-size: 12px;
   max-height: 120px;
-	background-image: sc_static('/images/contactButtonUp.png');
+	background: no-repeat sc_static('/images/buttonsLarge.png') 0 -159px;
 	border-radius: 5px;
 	cursor: pointer;
 }
@@ -17,7 +17,7 @@ $theme: '';.contact-button-large.sc-button-view {
  .contact-button-large.sc-button-view.sc-regular-size.square .sc-button-inner {
   height: 24px;
   max-height: 110px;
-	background-image: sc_static('/images/contactButtonUp.png');
+	background: no-repeat sc_static('/images/buttonsLarge.png') 0 -159px;
 	border-radius: 5px;
 	cursor: pointer;
 }
@@ -32,11 +32,11 @@ $theme: '';.contact-button-large.sc-button-view {
 	}
 
  .contact-button-large.sc-button-view.sc-regular-size.square.active {
-	background-image: sc_static('/images/contactButtonDown.png');
+	background: no-repeat sc_static('/images/buttonsLarge.png') 0 0px;
 }
 
  .contact-button-large.sc-button-view.sc-regular-size.square.active .sc-button-inner {
-	background-image: sc_static('/images/contactButtonDown.png');
+	background: no-repeat sc_static('/images/buttonsLarge.png') 0 0px;
 }
 
  .contact-button-large.sc-button-view.sc-regular-size.square.active .sc-button-label {
@@ -60,12 +60,12 @@ $theme: '';.contact-button-large.sc-button-view {
 
  .contact-button-large.sc-button-view.sc-regular-size.square.def.active,
  .contact-button-large.sc-button-view.sc-regular-size.square.sel.active {
-	background-image: sc_static('/images/contactButtonDown.png');
+	background: no-repeat sc_static('/images/buttonsLarge.png') 0 0px;
 }
 
  .contact-button-large.sc-button-view.sc-regular-size.square.def.active .sc-button-inner,
  .contact-button-large.sc-button-view.sc-regular-size.square.sel.active .sc-button-inner {
-	background-image: sc_static('/images/contactButtonDown.png');
+	background: no-repeat sc_static('/images/buttonsLarge.png') 0 0px;
 }
 
  .contact-button-large.sc-button-view.sc-regular-size.square.def.active .sc-button-label,

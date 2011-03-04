@@ -5,24 +5,19 @@ SC.mixin(Thecodeboutique, {
       FirstView: Ki.State.design({
 
         enterState: function() {
-					// State description: sets the mainPage.mainPane, //
-					// delays the animated navigation bar, //
-					// sets the tcb text to 0, //
-					// sets the navigation buttons reversed //
+					// State description: gets mainPage.mainPane, delays the animated navigation bar, sets the tcb text to 0, sets the navigation buttons reversed //
   				console.log('enterState: mainPage.mainPane w/ animated navigation');
 					Thecodeboutique.getPath('mainPage.mainPane').append();
 					Thecodeboutique.mainPage.mainPane.slideInNav.homeButton.animate('rotateY',180,{duration:1.0, timing:'ease-in-out'});
 					Thecodeboutique.mainPage.mainPane.slideInNav.portfolioButton.animate('rotateY',180,{duration:1.2, timing:'ease-in-out'});
 					Thecodeboutique.mainPage.mainPane.slideInNav.contactButton.animate('rotateY',180,{duration:1.4, timing:'ease-in-out'});
 					Thecodeboutique.mainPage.mainPane.tcbText.animate('opacity',0.0,{duration:1, timing:'ease-in-out'});
-					// sets the content in the controller apps //
-					// sets the profilePage.mainPane //
-					// starts the imageArray //
-					console.log('enterStatePreLoad: homePage.mainPane w/ slideShow array');
+					// sets the profilePage.mainPane, sets the content in the controller apps, starts the imageArray //
+					console.log('enterStatePreLoad: homePage.mainPane w/ slideShow array and the controller apps');
 					Thecodeboutique.getPath('homePage.mainPane');
-					Thecodeboutique.appsController.set('content', Thecodeboutique.apps);
 					Thecodeboutique.homePage.mainPane.middleView.slideShow.imageArray();
 					Thecodeboutique.homePage.mainPane.middleView.slideShowBack.imageArray();
+					Thecodeboutique.appsController.set('content', Thecodeboutique.apps);
 					this.invokeLater(this.slideNavigationBarIn,1200);
 				},
 				
@@ -71,27 +66,29 @@ SC.mixin(Thecodeboutique, {
 			Home: Ki.State.design({
 				
 				enterState: function() {
-						console.log('enterState: homePage.mainPane');
-						Thecodeboutique.getPath('mainPage.mainPane').remove();
-						Thecodeboutique.getPath('homePage.mainPane').append();
-						Thecodeboutique.homePage.mainPane.middleView.animate('opacity',1,{duration:.5, timing:'ease-in-out'});
-						this.invokeLater(this.scaleIn,500);
-						Thecodeboutique.homePage.mainPane.middleView.animate('scale',0.001,{duration:.5, timing:'ease-in-out'});
-						
-						this.loadData();
-        	},
-					loadData:function()
-					{
-						sc_require('models/visitor');
-						Thecodeboutique.VISITOR_QUERY = SC.Query.local(Thecodeboutique.Visitor);
-					},
+					console.log('enterState: homePage.mainPane');
+					Thecodeboutique.getPath('mainPage.mainPane').remove();
+					Thecodeboutique.getPath('homePage.mainPane').append();
+					Thecodeboutique.homePage.mainPane.middleView.animate('opacity',1,{duration:.5, timing:'ease-in-out'});
+					this.invokeLater(this.scaleIn,500);
+					Thecodeboutique.homePage.mainPane.middleView.animate('scale',0.001,{duration:.5, timing:'ease-in-out'});
+					this.loadData();
+        },
+
+				loadData:function() {
+					sc_require('models/visitor');
+					Thecodeboutique.VISITOR_QUERY = SC.Query.local(Thecodeboutique.Visitor);
+				},
 				
 				scaleIn:function() {
-						Thecodeboutique.homePage.mainPane.middleView.animate('scale',1.3,{duration:.5, timing:'ease-in-out'},this.invokeLater(this.backDown,500));
-					},
+					Thecodeboutique.homePage.mainPane.middleView.animate('scale',1.3, 
+						{duration:.5, timing:'ease-in-out'}, 
+						this.invokeLater(this.backDown,500));
+				},
 					
 				backDown:function() {
-					Thecodeboutique.homePage.mainPane.middleView.contentFrame.animate('width',650,{duration:.5, timing:'ease-in-out'});
+					Thecodeboutique.homePage.mainPane.middleView.contentFrame.animate('width',650,
+						{duration:.5, timing:'ease-in-out'});
 					Thecodeboutique.homePage.mainPane.middleView.animate('scale',1.0,{duration:.5, timing:'ease-in-out'});		
 					Thecodeboutique.homePage.mainPane.bottomView.animate('opacity',1.0,{duration:1.5, timing:'ease-in-out'});
 					Thecodeboutique.homePage.mainPane.topView.animate('opacity',1.0,{duration:1.5, timing:'ease-in-out'});						
@@ -101,7 +98,6 @@ SC.mixin(Thecodeboutique, {
 					this.gotoState('Exit');
 				},
 				
-
 				goToPortfolio:function() { 
 					this.gotoState('Portfolio');
 				},
