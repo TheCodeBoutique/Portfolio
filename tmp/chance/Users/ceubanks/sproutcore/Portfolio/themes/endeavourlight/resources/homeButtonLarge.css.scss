@@ -1,0 +1,74 @@
+
+$theme: '';.home-button-large.sc-button-view {
+  display: inline-block ;
+  vertical-align: middle;
+  text-decoration: none ;
+  border: 1px #555 none;
+}
+
+ .home-button-large.sc-button-view.sc-regular-size.square {
+  font-size: 12px;
+  max-height: 120px;
+	background: no-repeat sc_static('/images/buttonsLarge.png') 0 -475px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+ .home-button-large.sc-button-view.sc-regular-size.square .sc-button-inner {
+  height: 24px;
+  max-height: 110px;
+	background: no-repeat sc_static('/images/buttonsLarge.png') 0 -475px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+ .home-button-large.sc-button-view.sc-regular-size.square .sc-button-label {
+  height: 45px;
+  line-height: 42px;  
+  margin-left: 11px;
+  margin-right: 11px;  
+	background: none;
+	cursor: pointer;
+	}
+
+ .home-button-large.sc-button-view.sc-regular-size.square.active {
+	background: no-repeat sc_static('/images/buttonsLarge.png') 0 -318px;
+}
+
+ .home-button-large.sc-button-view.sc-regular-size.square.active .sc-button-inner {
+	background: no-repeat sc_static('/images/buttonsLarge.png') 0 -318px;
+}
+
+ .home-button-large.sc-button-view.sc-regular-size.square.active .sc-button-label {
+	background: none;
+}
+
+ .home-button-large.sc-button-view.sc-regular-size.square.def,
+ .home-button-large.sc-button-view.sc-regular-size.square.sel {
+	background-image: sc_static('/images/buttonUpDefault.png');
+}
+
+ .home-button-large.sc-button-view.sc-regular-size.square.def .sc-button-inner,
+ .home-button-large.sc-button-view.sc-regular-size.square.sel .sc-button-inner {
+	background-image: sc_static('/images/buttonUpDefault.png');
+}
+
+ .home-button-large.sc-button-view.sc-regular-size.square.def .sc-button-label,
+ .home-button-large.sc-button-view.sc-regular-size.square.sel .sc-button-label {
+	background: none;
+}
+
+ .home-button-large.sc-button-view.sc-regular-size.square.def.active,
+ .home-button-large.sc-button-view.sc-regular-size.square.sel.active {
+	background: no-repeat sc_static('/images/buttonsLarge.png') 0 -318px;
+}
+
+ .home-button-large.sc-button-view.sc-regular-size.square.def.active .sc-button-inner,
+ .home-button-large.sc-button-view.sc-regular-size.square.sel.active .sc-button-inner {
+	background: no-repeat sc_static('/images/buttonsLarge.png') 0 -318px;
+}
+
+ .home-button-large.sc-button-view.sc-regular-size.square.def.active .sc-button-label,
+ .home-button-large.sc-button-view.sc-regular-size.square.sel.active .sc-button-label {
+	background: none;
+}

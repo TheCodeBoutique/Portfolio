@@ -14,7 +14,7 @@ Thecodeboutique.appPage = SC.Page.design({
 		thecodeboutique:SC.ImageView.design({
 		 layout: { centerX: 0, centerY:0, height:163, width: 534 },
 		 useImageQueue: NO, 
-		 value: '/static/endeavourlight/en/current/resources/images/thecodeboutique.png?1299484324',
+		 value: '/static/endeavourlight/en/current/resources/images/thecodeboutique.png?1299525562',
 		}),
 		
 		endeavourFrame:SC.View.design({
@@ -24,7 +24,7 @@ Thecodeboutique.appPage = SC.Page.design({
 			endeavourImage:SC.ImageView.design({
 		 		layout: { centerX: 0, top:35, height:87, width: 671 },
 		 		useImageQueue: NO, 
-		 		value: '/static/endeavourlight/en/current/resources/images/endeavourBannerLRG.png?1299484324',
+		 		value: '/static/endeavourlight/en/current/resources/images/endeavourBannerLRG.png?1299525562',
 				}),
 		
 			endeavourDescription:SC.LabelView.design({
@@ -60,7 +60,7 @@ Thecodeboutique.appPage = SC.Page.design({
 			hacktimeImage:SC.ImageView.design({
 				layout: { centerX: 0, top: 30, height: 90, width: 547 },
 				useImageQueue: NO, 
-				value: '/static/endeavourlight/en/current/resources/images/hacktimeBannerLRG.png?1299485593',
+				value: '/static/endeavourlight/en/current/resources/images/hacktimeBannerLRG.png?1299525562',
 				}),
 		
 			hacktimeDescription:SC.LabelView.design({
@@ -96,7 +96,7 @@ Thecodeboutique.appPage = SC.Page.design({
 			comunityImage:SC.ImageView.design({
 				layout: { centerX: 0, top:30, height:132, width: 668 },
 				useImageQueue: NO, 
-				value: '/static/endeavourlight/en/current/resources/images/communityBannerLRG.png?1299484324',
+				value: '/static/endeavourlight/en/current/resources/images/communityBannerLRG.png?1299525562',
 			}),
 		
 			comunityDescription:SC.LabelView.design({
@@ -143,7 +143,7 @@ Thecodeboutique.appPage = SC.Page.design({
 		 layout: { top:430, height: 40, centerX: 250, width: 106 },
 		 title:  "Demo",
 		 target: "Thecodeboutique.statechart",
-		 action: "",
+		 action: "goToCommunityDemo",
 		}),
 		
 	}),
@@ -155,7 +155,7 @@ Thecodeboutique.appPage = SC.Page.design({
 			tutorialImage:SC.ImageView.design({
 				layout: { centerX: 0, top:40, height:121, width: 657 },
 				useImageQueue: NO, 
-				value: '/static/endeavourlight/en/current/resources/images/sproutcoreTutorialsBannerLRG.png?1299484324',
+				value: '/static/endeavourlight/en/current/resources/images/sproutcoreTutorialsBannerLRG.png?1299525562',
 			}),
 	
 			tutorialDescription:SC.LabelView.design({
@@ -198,7 +198,7 @@ Thecodeboutique.appPage = SC.Page.design({
 			animationImage:SC.ImageView.design({
 				layout: { centerX: 0, top:35, height:140, width: 676 },
 				useImageQueue: NO, 
-				value: '/static/endeavourlight/en/current/resources/images/animationBannerLRG.png?1299484324',
+				value: '/static/endeavourlight/en/current/resources/images/animationBannerLRG.png?1299525562',
 			}),
 		
 			animationDescription:SC.LabelView.design({
@@ -233,7 +233,7 @@ Thecodeboutique.appPage = SC.Page.design({
 			gameImage:SC.ImageView.design({
 				layout: { centerX: 0, top:30, height:103, width: 652 },
 				useImageQueue: NO, 
-				value: '/static/endeavourlight/en/current/resources/images/gameBannerLRG.png?1299484324',
+				value: '/static/endeavourlight/en/current/resources/images/gameBannerLRG.png?1299525562',
 			}),
 	
 			gameDescription:SC.LabelView.design({

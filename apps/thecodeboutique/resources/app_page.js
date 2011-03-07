@@ -143,7 +143,7 @@ Thecodeboutique.appPage = SC.Page.design({
 		 layout: { top:430, height: 40, centerX: 250, width: 106 },
 		 title:  "Demo",
 		 target: "Thecodeboutique.statechart",
-		 action: "",
+		 action: "goToCommunityDemo",
 		}),
 		
 	}),

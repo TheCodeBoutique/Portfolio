@@ -126,6 +126,8 @@ Portfolio: Ki.State.design({
 					Thecodeboutique.homePage.mainPane.topView.animate('opacity',0.0,{duration:1.5, timing:'ease-in-out'});
 					Thecodeboutique.homePage.mainPane.middleView.contentFrame.animate('width',0,{duration:.5, timing:'ease-in-out'});
         	},
+					
+					// goes back to home page //
 					goBackToHome:function()
 					{
 						Thecodeboutique.getPath('profilePage.mainPane').remove();
@@ -133,15 +135,60 @@ Portfolio: Ki.State.design({
 						Thecodeboutique.homePage.mainPane.middleView.animate('scale',0.001,{duration:.5, timing:'ease-in-out'});
 						this.gotoState('Home');
 					},
-					goToContact:function()
-					{
+					
+					// goes to contact page //
+					goToContact:function() {
 						Thecodeboutique.getPath('profilePage.mainPane').remove();
 						Thecodeboutique.getPath('contactPage.mainPane').append();
 						this.gotoState('Contact');
+					},
+					
+					//  goes to community demo page //
+					goToCommunityDemo:function() {
+						console.log('Community App Description Page Fade Out');
+						Thecodeboutique.getPath('appPage.mainPane').remove();
+						//Thecodeboutique.getPath('contactPage.mainPane').append();
+						this.gotoState('CommunityDemo');						
 					}
+					
 			}),
 
 // end of the portfolio view //
+// start of the community demo page //
+		CommunityDemo: Ki.State.design({
+			
+			// State description: gets communityDemoPage.mainPane, fades profilePage.mainPage.middleView out, delays the community demo page //
+			enterState: function() {
+				console.log('enterState: set communityDemoPage.mainPane, fade profilePage.mainPane.middleView out');
+				Thecodeboutique.getPath('communityDemoPage.mainPane').append();
+				Thecodeboutique.profilePage.mainPane.middleView.animate('opacity',0.0,{duration:1.5, timing:'ease-in-out'},this.invokeLater(this.buttonOut,1600));
+				this.invokeLater(this.fadeCommunityDemoIn,1500);
+			},
+			
+			// fades the communityDemoPage.mainPane in //
+			fadeCommunityDemoIn: function() {
+				console.log('     fade community demo page in');
+				Thecodeboutique.communityDemoPage.mainPane.animate('opacity',1.0,{duration:1.5, timing:'ease-in-out'});
+				//this.invokeLater(this.goBackToPortfolio,1500);
+			},
+			// goes back to portfolio page //
+			goBackToPortfolio: function(){
+				console.log('      fade portfolio back in');
+				this.gotoState('PortfolioBack');
+			}
+			
+		}),
+		
+		PortfolioBack: Ki.State.design({
+			enterState: function() {
+				console.log('Porfolio Back');
+				Thecodeboutique.getPath('communityDemoPage.mainPane').remove();
+				Thecodeboutique.getPath('profilePage.mainPane').append();
+				Thecodeboutique.profilePage.mainPane.middleView.animate('opacity',1.0,{duration:1.5, timing:'ease-in-out'});
+      }
+		}),
+
+
 // start of the contact view //
 			
 			Contact: Ki.State.design({
