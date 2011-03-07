@@ -1,8 +1,5 @@
 Thecodeboutique.profilePage = SC.Page.design({
 
-  // The main pane is made visible on screen as soon as your app is loaded.
-  // Add childViews to this pane for views to display immediately on page 
-  // load.
   mainPane: SC.MainPane.design({
 		classNames:['base-view'],
     childViews: 'topView topBar middleView bottomBar'.w(),

@@ -101,7 +101,8 @@ Ki.State = SC.Object.extend({
     @property {Boolean}
   */
   trace: function() {
-    return this.getPath('statechart.trace');
+    var key = this.getPath('statechart.statechartTraceKey');
+    return this.getPath('statechart.%@'.fmt(key));
   }.property().cacheable(),
   
   /** 
@@ -115,26 +116,60 @@ Ki.State = SC.Object.extend({
   */
   owner: function() {
     var sc = this.get('statechart'),
-        owner = sc.get('owner');
+        key = sc ? sc.get('statechartOwnerKey') : null,
+        owner = sc ? sc.get(key) : null;
     return owner ? owner : sc;
   }.property().cacheable(),
   
   init: function() {
     arguments.callee.base.apply(this,arguments);
-    
+
     this._registeredEventHandlers = {};
     this._registeredStringEventHandlers = {};
     this._registeredRegExpEventHandlers = [];
-    
+
     // Setting up observes this way is faster then using .observes,
     // which adds a noticable increase in initialization time.
-    var sc = this.get('statechart');
+    var sc = this.get('statechart'),
+        ownerKey = sc ? sc.get('statechartOwnerKey') : null,
+        traceKey = sc ? sc.get('statechartTraceKey') : null;
+
     if (sc) {
-      sc.addObserver('owner', this, '_statechartOwnerDidChange');
-      sc.addObserver('trace', this, '_statechartTraceDidChange');
+      sc.addObserver(ownerKey, this, '_statechartOwnerDidChange');
+      sc.addObserver(traceKey, this, '_statechartTraceDidChange');
     }
   },
   
+  destroy: function() {
+    var sc = this.get('statechart'),
+        ownerKey = sc ? sc.get('statechartOwnerKey') : null,
+        traceKey = sc ? sc.get('statechartTraceKey') : null;
+
+    if (sc) {
+      sc.removeObserver(ownerKey, this, '_statechartOwnerDidChange');
+      sc.removeObserver(traceKey, this, '_statechartTraceDidChange');
+    }
+
+    var substates = this.get('substates');
+    if (substates) {
+      substates.forEach(function(state) {
+        state.destroy();
+      });
+    }
+
+    this.set('substates', null);
+    this.set('currentSubstates', null);
+    this.set('parentState', null);
+    this.set('historyState', null);
+    this.set('initialSubstate', null);
+    this.set('statechart', null);
+
+    this.notifyPropertyChange('trace');
+    this.notifyPropertyChange('owner');
+
+    arguments.callee.base.apply(this,arguments);
+  },
+
   /**
     Used to initialize this state. To only be called by the owning statechart.
   */
@@ -814,7 +849,8 @@ Ki.State = SC.Object.extend({
 
 /**
   Use this when you want to plug-in a state into a statechart. This is beneficial
-  in cases where you split your statechart's states up into multiple files.
+  in cases where you split your statechart's states up into multiple files and
+  don't want to fuss with the sc_require construct.
   
   Example:
   
@@ -828,19 +864,33 @@ Ki.State = SC.Object.extend({
           
           a: Ki.State.plugin('path.to.a.state.class'),
           
-          b: Ki.State.pluing('path.to.another.state.class)
+          b: Ki.State.plugin('path.to.another.state.class')
         
         })
       
       })
     
     }}}
+    
+  You can also supply hashes the plugin feature in order to enhance a state or
+  implement required functionality:
+  
+    {{{
+    
+      SomeMixin = { ... };
+    
+      stateA: Ki.State.plugin('path.to.state', SomeMixin, { ... })
+    
+    }}}
   
   @param value {String} property path to a state class
+  @param args {Hash,...} Optional. Hash objects to be added to the created state
 */
 Ki.State.plugin = function(value) {
+  var args = SC.A(arguments); args.shift();
   var func = function() {
-    return SC.objectForPropertyPath(value);
+    var klass = SC.objectForPropertyPath(value);
+    return klass.extend.apply(klass, args);
   };
   func.statePlugin = YES;
   return func;

@@ -23,7 +23,7 @@ Thecodeboutique.homePage = SC.Page.design({
 			globe: SC.ImageView.design({
 			 layout: { left:20,top:20, height:100, width: 100 },
 			 useImageQueue: NO, 
-			 value: '/static/endeavourlight/en/current/resources/images/globe.png?1299044131',
+			 value: '/static/endeavourlight/en/current/resources/images/globe.png?1299484324',
 			}),
 			
 			homeButton:SC.ButtonView.design({
@@ -58,9 +58,9 @@ Thecodeboutique.homePage = SC.Page.design({
 				value: '',
 				imageArray:function() {
 					var images = [];
-					var image2 = '/static/endeavourlight/en/current/resources/images/tutorials.png?1299044131';
-					var image4 = '/static/endeavourlight/en/current/resources/images/animate.png?1299044131';
-					var image6 = '/static/endeavourlight/en/current/resources/images/hacktime.png?1299044131';
+					var image2 = '/static/endeavourlight/en/current/resources/images/tutorials.png?1299484324';
+					var image4 = '/static/endeavourlight/en/current/resources/images/animate.png?1299484324';
+					var image6 = '/static/endeavourlight/en/current/resources/images/hacktime.png?1299484324';
 					images = [image2,image4,image6];
 					this.set('value',images[i]);
 					this.invokeLater(this.fadeit,3200);
@@ -70,9 +70,9 @@ Thecodeboutique.homePage = SC.Page.design({
 				
 				fadeit:function(){
 					var images = [];
-					var image2 = '/static/endeavourlight/en/current/resources/images/tutorials.png?1299044131';
-					var image4 = '/static/endeavourlight/en/current/resources/images/animate.png?1299044131';
-					var image6 = '/static/endeavourlight/en/current/resources/images/hacktime.png?1299044131';
+					var image2 = '/static/endeavourlight/en/current/resources/images/tutorials.png?1299484324';
+					var image4 = '/static/endeavourlight/en/current/resources/images/animate.png?1299484324';
+					var image6 = '/static/endeavourlight/en/current/resources/images/hacktime.png?1299484324';
 					images = [image2,image4,image6];
 					if(i<2){
 						i++;
@@ -92,9 +92,9 @@ Thecodeboutique.homePage = SC.Page.design({
 				value: '',
 				imageArray:function(){
 					var images = [];
-					var image1 = '/static/endeavourlight/en/current/resources/images/comunity.png?1299044131';
-					var image3 = '/static/endeavourlight/en/current/resources/images/end.png?1299044131';
-					var image5 = '/static/endeavourlight/en/current/resources/images/Game.png?1299044131';
+					var image1 = '/static/endeavourlight/en/current/resources/images/comunity.png?1299484324';
+					var image3 = '/static/endeavourlight/en/current/resources/images/end.png?1299484324';
+					var image5 = '/static/endeavourlight/en/current/resources/images/Game.png?1299484324';
 					images = [image1,image3,image5];
 					this.set('value',images[i]);
 					this.invokeLater(this.fadeit,3200);
@@ -108,8 +108,8 @@ Thecodeboutique.homePage = SC.Page.design({
 						}else{
 							t =0;
 						};
-						var active = '/static/endeavourlight/en/current/resources/images/slideshowActive.png?1299044131';
-						var inactive = '/static/endeavourlight/en/current/resources/images/slideshowNotActive.png?1299044131';
+						var active = '/static/endeavourlight/en/current/resources/images/slideshowActive.png?1299484324';
+						var inactive = '/static/endeavourlight/en/current/resources/images/slideshowNotActive.png?1299484324';
 						if(t === 0){
 							Thecodeboutique.homePage.mainPane.middleView.selectorFrame.selector6.set('value',inactive);
 							Thecodeboutique.homePage.mainPane.middleView.selectorFrame.selector1.set('value',active);
@@ -130,9 +130,9 @@ Thecodeboutique.homePage = SC.Page.design({
 							Thecodeboutique.homePage.mainPane.middleView.selectorFrame.selector6.set('value',active);
 						}
 						var images = [];
-						var image1 = '/static/endeavourlight/en/current/resources/images/comunity.png?1299044131';
-						var image3 = '/static/endeavourlight/en/current/resources/images/end.png?1299044131';
-						var image5 = '/static/endeavourlight/en/current/resources/images/Game.png?1299044131';
+						var image1 = '/static/endeavourlight/en/current/resources/images/comunity.png?1299484324';
+						var image3 = '/static/endeavourlight/en/current/resources/images/end.png?1299484324';
+						var image5 = '/static/endeavourlight/en/current/resources/images/Game.png?1299484324';
 						images = [image1,image3,image5];
 						if(i<2){
 							i++;
@@ -153,37 +153,37 @@ Thecodeboutique.homePage = SC.Page.design({
 					selector1:SC.ImageView.design({
 						layout: { bottom:5, right:240, height:15, width:15 },
 						useImageQueue: NO, 
-						value: '/static/endeavourlight/en/current/resources/images/slideshowNotActive.png?1299044131',
+						value: '/static/endeavourlight/en/current/resources/images/slideshowNotActive.png?1299484324',
 					}),
 					
 					selector2:SC.ImageView.design({
 						layout: { bottom:5, right:220, height:15, width:15 },
 						useImageQueue: NO, 
-						value: '/static/endeavourlight/en/current/resources/images/slideshowNotActive.png?1299044131',
+						value: '/static/endeavourlight/en/current/resources/images/slideshowNotActive.png?1299484324',
 					}),
 					
 					selector3:SC.ImageView.design({
 						layout: { bottom:5, right:200, height:15, width:15 },
 						useImageQueue: NO, 
-						value: '/static/endeavourlight/en/current/resources/images/slideshowNotActive.png?1299044131',
+						value: '/static/endeavourlight/en/current/resources/images/slideshowNotActive.png?1299484324',
 					}),
 					
 					selector4:SC.ImageView.design({
 						layout: { bottom:5, right:180, height:15, width:15 },
 						useImageQueue: NO, 
-						value: '/static/endeavourlight/en/current/resources/images/slideshowNotActive.png?1299044131',
+						value: '/static/endeavourlight/en/current/resources/images/slideshowNotActive.png?1299484324',
 					}),
 					
 					selector5:SC.ImageView.design({
 						layout: { bottom:5, right:160, height:15, width:15 },
 						useImageQueue: NO, 
-						value: '/static/endeavourlight/en/current/resources/images/slideshowNotActive.png?1299044131',
+						value: '/static/endeavourlight/en/current/resources/images/slideshowNotActive.png?1299484324',
 					}),
 					
 					selector6:SC.ImageView.design({
 						layout: { bottom:5, right:140, height:15, width:15 },
 						useImageQueue: NO, 
-						value: '/static/endeavourlight/en/current/resources/images/slideshowNotActive.png?1299044131',
+						value: '/static/endeavourlight/en/current/resources/images/slideshowNotActive.png?1299484324',
 					}),
 					
 				}),
@@ -240,25 +240,25 @@ Thecodeboutique.homePage = SC.Page.design({
 				image1:SC.ImageView.design({
 					layout: { left:25, top:50, height:124, width: 264 },
 					useImageQueue: NO, 
-					value: '/static/endeavourlight/en/current/resources/images/animationBanner.png?1299044131',
+					value: '/static/endeavourlight/en/current/resources/images/animationBanner.png?1299484324',
 				}),
 				
 				image2:SC.ImageView.design({
 					layout: { left:319, top:50, height:126, width: 265 },
 					useImageQueue: NO, 
-					value: '/static/endeavourlight/en/current/resources/images/communityBanner.png?1299044131',
+					value: '/static/endeavourlight/en/current/resources/images/communityBanner.png?1299484324',
 				}),
 				
 				image3:SC.ImageView.design({
 					layout: { right:319, top:50, height:126, width: 264 },
 					useImageQueue: NO, 
-					value: '/static/endeavourlight/en/current/resources/images/cloudTrainingBanner.png?1299044131',
+					value: '/static/endeavourlight/en/current/resources/images/cloudTrainingBanner.png?1299484324',
 				}),
 		  	
 				image4:SC.ImageView.design({
 		 		 layout: { right:25, top:50, height:123, width: 265 },
 		 		 useImageQueue: NO, 
-		 		 value: '/static/endeavourlight/en/current/resources/images/endeavourBanner.png?1299044131',
+		 		 value: '/static/endeavourlight/en/current/resources/images/endeavourBanner.png?1299484324',
 		  	}),
 		
 			}),

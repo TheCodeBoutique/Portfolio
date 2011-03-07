@@ -246,7 +246,8 @@ Ki.State = SC.Object.extend({
     @property {Boolean}
   */
   trace: function() {
-    return this.getPath('statechart.trace');
+    var key = this.getPath('statechart.statechartTraceKey');
+    return this.getPath('statechart.%@'.fmt(key));
   }.property().cacheable(),
   
   /** 
@@ -260,26 +261,60 @@ Ki.State = SC.Object.extend({
   */
   owner: function() {
     var sc = this.get('statechart'),
-        owner = sc.get('owner');
+        key = sc ? sc.get('statechartOwnerKey') : null,
+        owner = sc ? sc.get(key) : null;
     return owner ? owner : sc;
   }.property().cacheable(),
   
   init: function() {
     arguments.callee.base.apply(this,arguments);
-    
+
     this._registeredEventHandlers = {};
     this._registeredStringEventHandlers = {};
     this._registeredRegExpEventHandlers = [];
-    
+
     // Setting up observes this way is faster then using .observes,
     // which adds a noticable increase in initialization time.
-    var sc = this.get('statechart');
+    var sc = this.get('statechart'),
+        ownerKey = sc ? sc.get('statechartOwnerKey') : null,
+        traceKey = sc ? sc.get('statechartTraceKey') : null;
+
     if (sc) {
-      sc.addObserver('owner', this, '_statechartOwnerDidChange');
-      sc.addObserver('trace', this, '_statechartTraceDidChange');
+      sc.addObserver(ownerKey, this, '_statechartOwnerDidChange');
+      sc.addObserver(traceKey, this, '_statechartTraceDidChange');
     }
   },
   
+  destroy: function() {
+    var sc = this.get('statechart'),
+        ownerKey = sc ? sc.get('statechartOwnerKey') : null,
+        traceKey = sc ? sc.get('statechartTraceKey') : null;
+
+    if (sc) {
+      sc.removeObserver(ownerKey, this, '_statechartOwnerDidChange');
+      sc.removeObserver(traceKey, this, '_statechartTraceDidChange');
+    }
+
+    var substates = this.get('substates');
+    if (substates) {
+      substates.forEach(function(state) {
+        state.destroy();
+      });
+    }
+
+    this.set('substates', null);
+    this.set('currentSubstates', null);
+    this.set('parentState', null);
+    this.set('historyState', null);
+    this.set('initialSubstate', null);
+    this.set('statechart', null);
+
+    this.notifyPropertyChange('trace');
+    this.notifyPropertyChange('owner');
+
+    arguments.callee.base.apply(this,arguments);
+  },
+
   /**
     Used to initialize this state. To only be called by the owning statechart.
   */
@@ -959,7 +994,8 @@ Ki.State = SC.Object.extend({
 
 /**
   Use this when you want to plug-in a state into a statechart. This is beneficial
-  in cases where you split your statechart's states up into multiple files.
+  in cases where you split your statechart's states up into multiple files and
+  don't want to fuss with the sc_require construct.
   
   Example:
   
@@ -973,19 +1009,33 @@ Ki.State = SC.Object.extend({
           
           a: Ki.State.plugin('path.to.a.state.class'),
           
-          b: Ki.State.pluing('path.to.another.state.class)
+          b: Ki.State.plugin('path.to.another.state.class')
         
         })
       
       })
     
     }}}
+    
+  You can also supply hashes the plugin feature in order to enhance a state or
+  implement required functionality:
+  
+    {{{
+    
+      SomeMixin = { ... };
+    
+      stateA: Ki.State.plugin('path.to.state', SomeMixin, { ... })
+    
+    }}}
   
   @param value {String} property path to a state class
+  @param args {Hash,...} Optional. Hash objects to be added to the created state
 */
 Ki.State.plugin = function(value) {
+  var args = SC.A(arguments); args.shift();
   var func = function() {
-    return SC.objectForPropertyPath(value);
+    var klass = SC.objectForPropertyPath(value);
+    return klass.extend.apply(klass, args);
   };
   func.statePlugin = YES;
   return func;
@@ -1457,21 +1507,41 @@ Ki.StatechartManager = {
   monitor: null,
   
   /**
+    Used to specify what property (key) on the statechart should be used as the trace property. By
+    default the property is 'trace'.
+
+    @property {String}
+  */
+  statechartTraceKey: 'trace',
+
+  /**
     Indicates whether to trace the statecharts activities. If true then the statechart will output
     its activites to the browser's JS console. Useful for debugging purposes.
-    
+
+    @see #statechartTraceKey
+
     @property {Boolean}
   */
   trace: NO,
   
   /**
+    Used to specify what property (key) on the statechart should be used as the owner property. By
+    default the property is 'owner'.
+
+    @property {String}
+  */
+  statechartOwnerKey: 'owner',
+
+  /**
     Sets who the owner is of this statechart. If null then the owner is this object otherwise
     the owner is the assigned object. 
-  
+
+    @see #statechartOwnerKey
+
     @property {SC.Object}
   */
   owner: null,
-  
+
   /** 
     Indicates if the statechart should be automatically initialized by this
     object after it has been created. If YES then initStatechart will be
@@ -1481,12 +1551,33 @@ Ki.StatechartManager = {
   */
   autoInitStatechart: YES,
   
+  /**
+    If yes, any warning messages produced by the statechart or any of its states will
+    not be logged, otherwise all warning messages will be logged. 
+    
+    While designing and debugging your statechart, it's best to keep this value false.
+    In production you can then suppress the warning messages.
+    
+    @property {Boolean}
+  */
+  suppressStatechartWarnings: NO,
+  
   initMixin: function() {
     if (this.get('autoInitStatechart')) {
       this.initStatechart();
     }
   },
   
+  destroyMixin: function() {
+    var root = this.get('rootState'),
+        traceKey = this.get('statechartTraceKey');
+
+    this.removeObserver(traceKey, this, '_statechartTraceDidChange');
+
+    root.destroy();
+    this.set('rootState', null);
+  },
+
   /**
     Initializes the statechart. By initializing the statechart, it will create all the states and register
     them with the statechart. Once complete, the statechart can be used to go to states and send events to.
@@ -1504,10 +1595,14 @@ Ki.StatechartManager = {
     if (this.get('monitorIsActive')) {
       this.set('monitor', Ki.StatechartMonitor.create());
     }
-    
-    var trace = this.get('trace'),
+
+    var traceKey = this.get('statechartTraceKey');
+
+    this.addObserver(traceKey, this, '_statechartTraceDidChange');
+    this._statechartTraceDidChange();
+
+    var trace = this.get('allowTracing'),
         rootState = this.get('rootState'),
-        owner = this.get('owner'),
         msg;
     
     if (trace) this.statechartLogTrace("BEGIN initialize statechart");
@@ -1673,6 +1768,11 @@ Ki.StatechartManager = {
       return;
     }
     
+    if (this.get('isDestroyed')) {
+      this.statechartLogError("can not go to state %@. statechart is destroyed".fmt(this));
+      return;
+    }
+    
     var args = this._processGotoStateArgs(arguments);
 
     state = args.state;
@@ -1683,7 +1783,7 @@ Ki.StatechartManager = {
     var pivotState = null,
         exitStates = [],
         enterStates = [],
-        trace = this.get('trace'),
+        trace = this.get('allowTracing'),
         rootState = this.get('rootState'),
         paramState = state,
         paramFromCurrentState = fromCurrentState;
@@ -1845,7 +1945,7 @@ Ki.StatechartManager = {
     
     this.notifyPropertyChange('currentStates');
     
-    if (this.get('trace')) {
+    if (this.get('allowTracing')) {
       this.statechartLogTrace("current states after: %@".fmt(this.get('currentStates')));
       this.statechartLogTrace("END gotoState: %@".fmt(gotoState));
     }
@@ -1867,7 +1967,7 @@ Ki.StatechartManager = {
       }
     }
       
-    if (this.get('trace')) this.statechartLogTrace("exiting state: %@".fmt(state));
+    if (this.get('allowTracing')) this.statechartLogTrace("exiting state: %@".fmt(state));
     
     state.set('currentSubstates', []);
     state.notifyPropertyChange('isCurrentState');
@@ -1906,7 +2006,7 @@ Ki.StatechartManager = {
       }
     }
     
-    if (this.get('trace')) this.statechartLogTrace("entering state: %@".fmt(state));
+    if (this.get('allowTracing')) this.statechartLogTrace("entering state: %@".fmt(state));
     
     state.notifyPropertyChange('isCurrentState');
     var result = this.enterState(state, context);
@@ -2015,13 +2115,19 @@ Ki.StatechartManager = {
     @returns {SC.Responder} the responder that handled it or null
   */
   sendEvent: function(event, arg1, arg2) {
+    
+    if (this.get('isDestroyed')) {
+      this.statechartLogError("can send event %@. statechart is destroyed".fmt(event));
+      return;
+    }
+    
     var statechartHandledEvent = NO,
         eventHandled = NO,
         currentStates = this.get('currentStates').slice(),
         len = 0,
         i = 0,
         state = null,
-        trace = this.get('trace');
+        trace = this.get('allowTracing');
     
     if (this._sendEventLocked || this._goStateLocked) {
       // Want to prevent any actions from being processed by the states until 
@@ -2113,7 +2219,7 @@ Ki.StatechartManager = {
   _traverseStatesToExit: function(state, exitStatePath, stopState, gotoStateActions) {    
     if (!state || state === stopState) return;
     
-    var trace = this.get('trace');
+    var trace = this.get('allowTracing');
     
     // This state has concurrent substates. Therefore we have to make sure we
     // exit them up to this state before we can go any further up the exit chain.
@@ -2152,7 +2258,7 @@ Ki.StatechartManager = {
   _traverseStatesToEnter: function(state, enterStatePath, pivotState, useHistory, gotoStateActions) {
     if (!state) return;
     
-    var trace = this.get('trace');
+    var trace = this.get('allowTracing');
     
     // We do not want to enter states in the enter path until the pivot state has been reached. After
     // the pivot state has been reached, then we can go ahead and actually enter states.
@@ -2535,7 +2641,7 @@ Ki.StatechartManager = {
   /** 
     Used to log a statechart trace message
   */
-  statechartLogTrace: function(msg) {    
+  statechartLogTrace: function(msg) {
     SC.Logger.info("%@: %@".fmt(this.get('statechartLogPrefix'), msg));
   },
   
@@ -2550,6 +2656,7 @@ Ki.StatechartManager = {
     Used to log a statechart warning message
   */
   statechartLogWarning: function(msg) {
+    if (this.get('suppressStatechartWarnings')) return;
     SC.Logger.warn("WARN %@: %@".fmt(this.get('statechartLogPrefix'), msg));
   },
   
@@ -2562,7 +2669,18 @@ Ki.StatechartManager = {
     else prefix = "%@<%@, %@>".fmt(className, name, SC.guidFor(this));
     
     return prefix;
-  }.property().cacheable()
+  }.property().cacheable(),
+
+  /** @private @property */
+  allowTracing: function() {
+    var key = this.get('statechartTraceKey');
+    return this.get(key);
+  }.property().cacheable(),
+
+  /** @private */
+  _statechartTraceDidChange: function() {
+    this.notifyPropertyChange('allowTracing');
+  }
   
 };
 

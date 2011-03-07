@@ -3,6 +3,5 @@ Thecodeboutique.appList = SC.ListItemView.extend(
   
   escapeHTML: NO,
   
-  classNames: ['sc-list-item-view'],
   
 });

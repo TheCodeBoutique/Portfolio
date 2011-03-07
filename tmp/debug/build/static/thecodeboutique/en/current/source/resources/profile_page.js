@@ -1,8 +1,5 @@
 Thecodeboutique.profilePage = SC.Page.design({
 
-  // The main pane is made visible on screen as soon as your app is loaded.
-  // Add childViews to this pane for views to display immediately on page 
-  // load.
   mainPane: SC.MainPane.design({
 		classNames:['base-view'],
     childViews: 'topView topBar middleView bottomBar'.w(),
@@ -16,7 +13,7 @@ Thecodeboutique.profilePage = SC.Page.design({
 			logo:SC.ImageView.design({
 		 		layout: { left:20,top:20, height:100, width: 100 },
 		 		useImageQueue: NO, 
-		 		value: '/static/endeavourlight/en/current/resources/images/globe.png?1299044131',
+		 		value: '/static/endeavourlight/en/current/resources/images/globe.png?1299484324',
 			}),
 			
 			homeButton:SC.ButtonView.design({

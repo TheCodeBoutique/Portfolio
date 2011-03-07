@@ -140,6 +140,9 @@ Portfolio: Ki.State.design({
 						this.gotoState('Contact');
 					}
 			}),
+
+// end of the portfolio view //
+// start of the contact view //
 			
 			Contact: Ki.State.design({
 				

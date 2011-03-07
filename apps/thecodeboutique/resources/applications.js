@@ -2,7 +2,7 @@ Thecodeboutique.apps = [
 			// About Page //
 		SC.Object.create({
 			name: "Endeavour-os",
-			show: "Thecodeboutique.appPage.mainPane.endFrame",
+			show: "Thecodeboutique.appPage.mainPane.endeavourFrame",
 			appImage:sc_static('/images/endeavour_icon.png'),
 			description:"This is description about somthing",
 			}),
